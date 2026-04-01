@@ -96,7 +96,7 @@
       letter-spacing: 0.35em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 2.5rem;
+      margin-bottom: 5rem;
       opacity: 0;
       animation: fadeUp 1s ease forwards 0.3s;
     }
@@ -104,7 +104,7 @@
     .hero-title-wrap {
       position: relative;
       display: inline-block;
-      margin-bottom: 2rem;
+      margin-bottom: 0;
       opacity: 0;
       animation: fadeUp 1.2s ease forwards 0.6s;
     }
@@ -114,9 +114,14 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 520px;
-      height: 520px;
+      width: 560px;
+      height: 560px;
       pointer-events: none;
+    }
+
+    @keyframes slowSpin {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to   { transform: translate(-50%, -50%) rotate(360deg); }
     }
 
     .hero-title {
@@ -147,7 +152,7 @@
       font-size: clamp(1.15rem, 2.5vw, 1.55rem);
       color: var(--cream);
       max-width: 560px;
-      margin: 0 auto 1.2rem;
+      margin: 5rem auto 1.2rem;
       opacity: 0;
       animation: fadeUp 1.2s ease forwards 0.9s;
     }
@@ -258,7 +263,7 @@
       font-size: 0.7rem;
       letter-spacing: 0.4em;
       text-transform: uppercase;
-      color: var(--gold-dim);
+      color: var(--gold);
       margin-bottom: 1rem;
       display: block;
     }
@@ -497,7 +502,7 @@
       .details-grid { grid-template-columns: 1fr; }
       .detail-item { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.2); }
       .detail-item:last-child { border-bottom: none; }
-      .hero-title-wrap svg.ring { width: 320px; height: 320px; }
+      .hero-title-wrap svg.ring { width: 380px; height: 380px; }
     }
   </style>
 </head>
@@ -508,25 +513,112 @@
     <p class="hero-eyebrow">North Georgia Mountains &nbsp;·&nbsp; November 13–15, 2026</p>
 
     <div class="hero-title-wrap">
-      <svg class="ring" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg" style="animation: slowSpin 80s linear infinite;">
-        <circle cx="260" cy="260" r="230" stroke="rgba(201,168,76,0.12)" stroke-width="1"/>
-        <circle cx="260" cy="260" r="210" stroke="rgba(201,168,76,0.08)" stroke-width="1" stroke-dasharray="4 8"/>
-        <g stroke="rgba(201,168,76,0.3)" stroke-width="1.5" fill="none">
-          <path d="M260,30 Q290,50 280,80 Q270,110 260,100 Q250,110 240,80 Q230,50 260,30Z"/>
-          <path d="M260,490 Q290,470 280,440 Q270,410 260,420 Q250,410 240,440 Q230,470 260,490Z"/>
-          <path d="M30,260 Q50,230 80,240 Q110,250 100,260 Q110,270 80,280 Q50,290 30,260Z"/>
-          <path d="M490,260 Q470,230 440,240 Q410,250 420,260 Q410,270 440,280 Q470,290 490,260Z"/>
-          <path d="M97,97 L107,87 L117,97 L107,107Z" stroke-width="1"/>
-          <path d="M403,97 L413,87 L423,97 L413,107Z" stroke-width="1"/>
-          <path d="M97,423 L107,413 L117,423 L107,433Z" stroke-width="1"/>
-          <path d="M403,423 L413,413 L423,423 L413,433Z" stroke-width="1"/>
+      <svg class="ring" id="rootRing" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" style="animation: slowSpin 80s linear infinite 7s;">
+
+        <!-- STRAND 1: r~190, perfectly centered on 250,250 -->
+        <path id="s1" pathLength="1000"
+          stroke-dasharray="1000" stroke-dashoffset="1000"
+          stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"
+          d="M 250,440
+             C 276,440 301,433 322,420
+             C 345,406 363,385 373,361
+             C 384,336 385,308 377,283
+             C 369,257 353,234 331,218
+             C 308,202 281,194 253,194
+             C 225,194 198,203 176,220
+             C 153,237 137,261 130,288
+             C 122,315 124,344 135,370
+             C 147,396 167,418 192,431
+             C 216,443 250,440 250,440 Z"
+        />
+
+        <!-- STRAND 2: r~205, phase +40deg, centered on 250,250 -->
+        <path id="s2" pathLength="1000"
+          stroke-dasharray="1000" stroke-dashoffset="1000"
+          stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"
+          d="M 268,454
+             C 294,450 318,440 338,423
+             C 360,405 375,381 381,354
+             C 388,326 384,296 371,270
+             C 358,243 337,221 311,209
+             C 285,196 255,193 227,200
+             C 198,208 173,225 155,250
+             C 136,275 127,306 130,336
+             C 133,366 146,394 167,415
+             C 189,437 218,450 248,454
+             C 255,455 268,454 268,454 Z"
+        />
+
+        <!-- STRAND 3: r~175, phase -40deg, centered on 250,250 -->
+        <path id="s3" pathLength="1000"
+          stroke-dasharray="1000" stroke-dashoffset="1000"
+          stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" fill="none"
+          d="M 232,424
+             C 255,428 278,422 297,408
+             C 317,393 330,371 334,347
+             C 338,322 332,295 318,273
+             C 304,251 283,235 259,228
+             C 234,221 207,224 185,236
+             C 162,249 146,271 140,297
+             C 134,323 139,351 153,374
+             C 168,397 191,414 218,421
+             C 223,423 232,424 232,424 Z"
+        />
+
+        <!-- STRAND 4: r~215, outermost wispy dashed, centered on 250,250 -->
+        <path id="s4" pathLength="1000"
+          stroke-dasharray="14 10 4 18 8 12 3 20 9 13" stroke-dashoffset="1000"
+          stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" fill="none"
+          d="M 250,465
+             C 279,465 307,457 330,442
+             C 356,425 375,400 384,371
+             C 394,341 392,308 380,280
+             C 368,251 347,227 320,212
+             C 293,197 262,191 232,196
+             C 201,202 173,218 152,242
+             C 130,267 119,299 120,330
+             C 121,362 133,393 154,417
+             C 175,441 204,456 235,463
+             C 240,464 250,465 250,465 Z"
+        />
+
+        <!-- Fairy dust -->
+        <g id="dustGroup">
+          <circle class="dust" cx="250" cy="443" r="2.2" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="213" cy="440" r="1.4" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="178" cy="429" r="2.0" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="146" cy="412" r="1.5" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="117" cy="390" r="2.2" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="93" cy="362" r="1.4" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="74" cy="330" r="2.0" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="62" cy="296" r="1.5" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="57" cy="259" r="2.2" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="59" cy="223" r="1.4" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="68" cy="187" r="2.0" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="83" cy="154" r="1.5" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="104" cy="124" r="2.2" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="131" cy="98" r="1.4" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="162" cy="78" r="2.0" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="196" cy="65" r="1.5" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="232" cy="58" r="2.2" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="268" cy="58" r="1.4" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="304" cy="65" r="2.0" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="338" cy="78" r="1.5" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="369" cy="98" r="2.2" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="396" cy="124" r="1.4" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="417" cy="153" r="2.0" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="432" cy="187" r="1.5" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="441" cy="223" r="2.2" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="443" cy="259" r="1.4" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="438" cy="296" r="2.0" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="426" cy="330" r="1.5" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="407" cy="362" r="2.2" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="383" cy="390" r="1.4" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="354" cy="412" r="2.0" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="322" cy="429" r="1.5" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="287" cy="440" r="2.2" fill="rgba(240,232,216,0)"/>
         </g>
-        <g fill="rgba(201,168,76,0.4)">
-          <polygon points="260,22 263,31 272,31 265,37 268,46 260,40 252,46 255,37 248,31 257,31"/>
-          <polygon points="260,498 263,489 272,489 265,483 268,474 260,480 252,474 255,483 248,489 257,489"/>
-          <polygon points="22,260 31,257 31,248 37,255 46,252 40,260 46,268 37,265 31,272 31,263"/>
-          <polygon points="498,260 489,257 489,248 483,255 474,252 480,260 474,268 483,265 489,272 489,263"/>
-        </g>
+
       </svg>
 
       <h1 class="hero-title">
@@ -536,7 +628,7 @@
     </div>
 
     <p class="hero-tagline">A retreat for women who believe in magic and making things happen.</p>
-    <p class="hero-tagline-2">Equal parts ritual &nbsp;·&nbsp; real life &nbsp;·&nbsp; sisterhood</p>
+    <p class="hero-tagline-2">Equal parts restorative retreat &amp; girl's trip.</p>
 
     <div class="star-row">
       <div class="line"></div>
@@ -544,7 +636,7 @@
       <div class="line"></div>
     </div>
 
-    <a href="https://form.jotform.com/260767943027060" class="btn-primary" target="_blank" rel="noopener">
+    <a href="YOUR_JOTFORM_LINK_HERE" class="btn-primary" target="_blank" rel="noopener">
       Express Your Interest
     </a>
 
@@ -556,7 +648,7 @@
     <div class="about-grid">
       <div class="reveal">
         <span class="section-label">The Vision</span>
-        <h2 class="section-title">Magic is all around us.<br/>We just have to tune in.</h2>
+        <h2 class="section-title">Magic is all around us.<br/>We just have to return to it.</h2>
         <p class="section-body">
           Practical Magic Retreat was created to help you do just that. Throughout the weekend, you'll be guided through workshops and experiences designed to open you up to possibility and wonder — while also offering grounded, practical tools you can carry home to stay connected to this sense of expansion.
         </p>
@@ -566,7 +658,7 @@
         </p>
       </div>
       <div class="about-visual reveal">
-        <img src="Tree-roots-dark.png" alt="As above so below — tree with moon phases, women, and ravens" style="width:100%; max-width:420px; opacity:0.92;"/>
+        <img src="Tree-roots-dark.jpg" alt="Tree roots" style="width:100%; max-width:420px; border-radius:2px; opacity:0.92;"/>
       </div>
     </div>
   </section>
@@ -574,7 +666,7 @@
   <!-- QUOTE BAND -->
   <div class="quote-band">
     <p class="quote-text reveal">
-      "At the intersection of sisterhood, joyful devotion, and self-remembrance lies practical magic — the kind that blooms when women gather to celebrate their power, their play, and their presence."
+      "At the intersection of strategy &amp; spirituality, pragmatism &amp; possibility, lies practical magic — the kind that blooms when women gather to rest, play and reconnect with themselves &amp; each other."
     </p>
     <p class="quote-attr reveal">Practical Magic Retreat &nbsp;·&nbsp; November 2026</p>
   </div>
@@ -584,18 +676,18 @@
     <div class="pillars-inner">
       <div class="pillars-header reveal">
         <span class="section-label">What Awaits You</span>
-        <h2 class="section-title">Part girl's trip. Part growth. Entirely magical.</h2>
+        <h2 class="section-title">Part ritual. Part real life. All Magic.</h2>
       </div>
       <div class="pillars-grid">
         <div class="pillar reveal">
           <div class="pillar-icon">🌙</div>
-          <h3 class="pillar-title">Ritual & Spellwork</h3>
-          <p class="pillar-body">Workshops in manifestation, intention setting, and the everyday art of romanticizing your life. Grounded practices that actually work.</p>
+          <h3 class="pillar-title">Ritual</h3>
+          <p class="pillar-body">Workshops in dream activation, intention setting, and the everyday art of romanticizing your life. Grounded practices that actually work.</p>
         </div>
         <div class="pillar reveal">
           <div class="pillar-icon">⚡</div>
           <h3 class="pillar-title">Practical Tools</h3>
-          <p class="pillar-body">Real-world skills: budgeting, nervous system regulation, narrative therapy. Magic is most powerful when it has a strategy behind it.</p>
+          <p class="pillar-body">Real-world practices to take home, like values-based budgeting &amp; nervous system regulation.</p>
         </div>
         <div class="pillar reveal">
           <div class="pillar-icon">🌿</div>
@@ -630,7 +722,7 @@
     <div class="details-grid reveal">
       <div class="detail-item">
         <span class="detail-label">When</span>
-        <p class="detail-value">November 13–15, 2026<br/><small style="font-size:0.85rem; opacity:0.6;">Thursday – Saturday</small></p>
+        <p class="detail-value">November 13–15, 2026<br/><small style="font-size:0.85rem; opacity:0.6;">Friday – Sunday</small></p>
       </div>
       <div class="detail-item">
         <span class="detail-label">Where</span>
@@ -645,10 +737,10 @@
 
   <!-- YOUR GUIDES -->
   <section class="guides-section">
-    <span class="section-label reveal">Your Guides</span>
+    <span class="section-label reveal">Your Hosts</span>
     <h2 class="section-title reveal">Silly. Real. Human.<br/>Believers in the power of play.</h2>
     <p class="guides-blurb reveal">
-      We're giving "girl's trip" — if your girls like to talk about the meaning of life between belly laughs… and maybe start a coven. 😉 We don't take ourselves too seriously, and we believe there is power in play.
+      We don't take ourselves too seriously or think we have all the answers. We'll show up as our full, messy selves, which hopefully gives you the space to do the same. We approach facilitation from a mindset that all participants have something valuable to offer and meaningful connection happens when we can drop the masks.
     </p>
     <div style="display:inline-block; border:1px solid rgba(201,168,76,0.2); padding:1.5rem 3rem;" class="reveal">
       <p style="font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold-dim);">Guide bios coming soon</p>
@@ -667,7 +759,7 @@
     <p class="section-body reveal" style="text-align:center; margin: 0 auto 3rem;">
       If you're craving solace from the grind, a new way of relating to the everyday, and deep, meaningful connection — this is your invitation. You might even meet your new soul sisters.
     </p>
-    <a href="https://form.jotform.com/260767943027060" class="btn-primary reveal" target="_blank" rel="noopener">
+    <a href="YOUR_JOTFORM_LINK_HERE" class="btn-primary reveal" target="_blank" rel="noopener">
       Express Your Interest
     </a>
     <p class="cta-note reveal">Spots are limited &nbsp;·&nbsp; Interest form takes 2 minutes</p>
@@ -691,6 +783,48 @@
       });
     }, { threshold: 0.12 });
     reveals.forEach(el => observer.observe(el));
+  </script>
+
+  <script>
+  (function() {
+    const GROW_MS  = 5800;
+    const dustDots = Array.from(document.querySelectorAll('.dust'));
+    const strands  = [
+      { id: 's1', delay: 0.00, opacity: 0.86 },
+      { id: 's2', delay: 0.06, opacity: 0.60 },
+      { id: 's3', delay: 0.11, opacity: 0.42 },
+      { id: 's4', delay: 0.03, opacity: 0.24 },
+    ];
+    const dustFractions = dustDots.map((_, i) => i / dustDots.length);
+    let startTime = null;
+    function ease(t) { return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
+    function lerp(t, a, b) { return Math.round(a + (b-a)*Math.min(t,1)); }
+    function animate(ts) {
+      if (!startTime) startTime = ts;
+      const raw      = Math.min((ts - startTime) / GROW_MS, 1);
+      const progress = ease(raw);
+      const r = lerp(progress, 240, 201);
+      const g = lerp(progress, 232, 168);
+      const b = lerp(progress, 216,  76);
+      strands.forEach(({ id, delay, opacity }) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const p = ease(Math.min(Math.max((progress - delay)/(1 - delay), 0), 1));
+        el.style.strokeDashoffset = 1000 * (1 - p);
+        el.style.stroke = `rgba(${r},${g},${b},${opacity})`;
+      });
+      dustDots.forEach((dot, i) => {
+        const threshold = dustFractions[i];
+        const trailP    = Math.max(0, progress - 0.025);
+        if (trailP < threshold) return;
+        const age    = Math.min((trailP - threshold)/0.08, 1);
+        const sparkA = age < 0.3 ? age/0.3 : 1-(age-0.3)/0.7*0.28;
+        dot.style.fill = `rgba(${lerp(age,240,201)},${lerp(age,232,168)},${lerp(age,216,76)},${(sparkA*0.82).toFixed(2)})`;
+      });
+      if (raw < 1) requestAnimationFrame(animate);
+    }
+    setTimeout(() => requestAnimationFrame(animate), 950);
+  })();
   </script>
 </body>
 </html>
