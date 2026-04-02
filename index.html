@@ -301,6 +301,31 @@
 
     .about-visual svg { width: 100%; max-width: 380px; opacity: 0.85; }
 
+    .about-image-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .about-image-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border: 1px solid rgba(201,168,76,0.25);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .about-image-wrap img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center center;
+      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
+      mask-image: linear-gradient(to left, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
+    }
+
     /* ── PILLARS ── */
     .pillars-bg {
       background: linear-gradient(to bottom, var(--black), var(--deep), var(--black));
@@ -538,14 +563,32 @@
       .detail-item { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.2); }
       .detail-item:last-child { border-bottom: none; }
       .hero-title-wrap svg.ring { width: 380px; height: 380px; }
-      .quote-band-inner { grid-template-columns: 1fr; gap: 3rem; }
+
+      /* Quote band: image below quote, fade top edge */
+      .quote-band-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .quote-band-inner .quote-image-wrap {
+        order: 2;
+      }
+      .quote-band-inner .quote-content {
+        order: 1;
+        text-align: center;
+      }
       .quote-image-wrap img {
         aspect-ratio: 4 / 3;
         object-position: center 40%;
-        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
-        mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 35%);
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 35%);
       }
-      .quote-content { text-align: center; }
+
+      /* Tree image: fade top edge on mobile */
+      .about-image-wrap img {
+        aspect-ratio: 4 / 3;
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 35%);
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 35%);
+      }
     }
   </style>
 </head>
@@ -701,7 +744,9 @@
         </p>
       </div>
       <div class="about-visual reveal">
-        <img src="Tree-roots-dark.jpg" alt="Tree roots" style="width:100%; max-width:420px; border-radius:2px; opacity:0.92;"/>
+        <div class="about-image-wrap">
+          <img src="Tree-roots-dark.jpg" alt="Tree roots" />
+        </div>
       </div>
     </div>
   </section>
