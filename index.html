@@ -623,6 +623,206 @@
       color: rgba(240,232,216,0.8);
     }
 
+    /* ── PRICING ── */
+    .pricing-bg {
+      background: linear-gradient(to bottom, var(--black), var(--deep), var(--black));
+      padding: 6rem 2rem;
+    }
+
+    .pricing-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .pricing-intro {
+      font-size: 1.05rem;
+      color: rgba(240,232,216,0.75);
+      max-width: 580px;
+      margin: 1rem auto 3.5rem;
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* Programming row: framed text left, moon image right */
+    .pricing-prog-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-bottom: 2.5rem;
+      align-items: stretch;
+    }
+
+    .pricing-programming {
+      border: 1px solid rgba(201,168,76,0.3);
+      padding: 2.5rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.8rem;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .pricing-prog-label {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      color: var(--gold-light);
+      letter-spacing: 0.05em;
+    }
+
+    .pricing-prog-note {
+      font-size: 0.95rem;
+      color: rgba(240,232,216,0.6);
+      font-style: italic;
+    }
+
+    .pricing-prog-price {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      margin-top: 0.4rem;
+    }
+
+    .pricing-moon-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .pricing-moon-wrap img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%);
+      mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%);
+    }
+
+    .pricing-lodging-wrap { margin-bottom: 2.5rem; }
+
+    .pricing-lodging-heading {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .pricing-lodging-heading span {
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: 0.9rem;
+      color: rgba(240,232,216,0.5);
+    }
+
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .pricing-table th {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 1rem 1.5rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .pricing-table th:not(:first-child),
+    .pricing-table td:not(:first-child) {
+      text-align: center;
+      border-left: 1px solid rgba(201,168,76,0.12);
+    }
+
+    .pricing-table td {
+      padding: 1.2rem 1.5rem;
+      font-size: 1rem;
+      color: rgba(240,232,216,0.85);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      vertical-align: middle;
+    }
+
+    .pricing-table td em {
+      display: block;
+      font-size: 0.85rem;
+      color: rgba(240,232,216,0.45);
+      margin-top: 0.2rem;
+    }
+
+    .pricing-table tbody tr:last-child td { border-bottom: none; }
+
+    .pricing-table td:not(:first-child) {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      color: var(--gold);
+    }
+
+    .pricing-fine {
+      font-size: 0.88rem;
+      font-style: italic;
+      color: rgba(240,232,216,0.4);
+      margin-top: 1rem;
+      line-height: 1.7;
+    }
+
+    .pricing-cta-wrap {
+      text-align: center;
+      padding-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.8rem;
+    }
+
+    .pricing-early-bird {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.1rem;
+      color: rgba(240,232,216,0.75);
+      max-width: 480px;
+      font-style: italic;
+    }
+
+    .pricing-contact {
+      font-family: 'EB Garamond', serif;
+      font-size: 1rem;
+      color: rgba(240,232,216,0.5);
+    }
+
+    .pricing-contact a {
+      color: var(--gold-dim);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease;
+    }
+
+    .pricing-contact a:hover { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .pricing-prog-wrap {
+        grid-template-columns: 1fr;
+      }
+      .pricing-moon-wrap {
+        height: 220px;
+      }
+      .pricing-moon-wrap img {
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%);
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%);
+      }
+      .pricing-table th,
+      .pricing-table td { padding: 0.9rem 1rem; }
+    }
+
     /* ── CTA ── */
     .cta-section {
       background:
@@ -1059,6 +1259,62 @@
       </div>
     </div>
   </section>
+
+  <!-- PRICING -->
+  <div id="pricing" class="pricing-bg">
+    <div class="pricing-inner">
+      <div class="reveal" style="text-align:center;">
+        <span class="section-label">Investment</span>
+        <h2 class="section-title">What's Included</h2>
+        <p class="pricing-intro reveal">All retreat programming, facilitated workshops, meals, and lodging are included in your total. Pricing is broken down below.</p>
+      </div>
+
+      <div class="pricing-prog-wrap reveal">
+        <div class="pricing-programming">
+          <div class="pricing-prog-label">Retreat Programming</div>
+          <div class="pricing-prog-note">Includes all workshops, facilitated experiences &amp; meals</div>
+          <div class="pricing-prog-price">$497</div>
+        </div>
+        <div class="pricing-moon-wrap">
+          <img src="Full-moon.jpg" alt="Full moon rising over trees" />
+        </div>
+      </div>
+
+      <div class="pricing-lodging-wrap reveal">
+        <p class="pricing-lodging-heading">Lodging <span>(select one)</span></p>
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Accommodation Type</th>
+              <th>Early Bird</th>
+              <th>Regular</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Private room <em>(can be shared w/ a friend and split)</em></td>
+              <td>$700</td>
+              <td>$800</td>
+            </tr>
+            <tr>
+              <td>Shared accommodation <em>(hosts assign rooms)</em></td>
+              <td>$250</td>
+              <td>$350</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="pricing-fine">If you and 2 friends want to share a king or queen room, that can be arranged for an additional surcharge. Additional mattresses or sleeping mats will not be provided, but you may bring your own.</p>
+      </div>
+
+      <div class="pricing-cta-wrap reveal">
+        <p class="pricing-early-bird">By filling out the interest form, you'll have first access to Early Bird pricing when it's live.</p>
+        <a href="https://form.jotform.com/260767943027060" class="btn-primary" target="_blank" rel="noopener" style="opacity:1; animation:none;">Express Your Interest</a>
+        <p class="pricing-contact">
+          <a href="mailto:practicalmagicretreat@gmail.com">Reach out via email</a> with questions or schedule a <a href="https://calendar.app.google/bYnRAG7tAuKbhADXA" target="_blank" rel="noopener">free exploration call</a>.
+        </p>
+      </div>
+    </div>
+  </div>
 
   <!-- YOUR GUIDES -->
   <section id="hosts" class="guides-section">
