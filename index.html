@@ -532,6 +532,82 @@
     .footer-tagline { font-family: 'EB Garamond', serif; font-style: italic; font-size: 0.95rem; color: rgba(240,232,216,0.4); margin-bottom: 1.5rem; }
     .footer-fine { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(240,232,216,0.2); }
 
+    /* ── HOSTS ── */
+    .hosts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 4rem;
+      align-items: start;
+    }
+
+    .host-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .host-image-wrap {
+      position: relative;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .host-image-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border: 1px solid rgba(201,168,76,0.25);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .host-image-wrap img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
+    }
+
+    .host-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      color: var(--gold-light);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.05em;
+    }
+
+    .host-role {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 1.2rem;
+    }
+
+    .host-bio {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: rgba(240,232,216,0.8);
+    }
+
+    @media (max-width: 768px) {
+      .hosts-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+      .host-image-wrap img {
+        aspect-ratio: 4 / 3;
+        object-position: center 20%;
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+      }
+    }
+
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
@@ -837,8 +913,33 @@
     <p class="guides-blurb reveal">
       We don't take ourselves too seriously or think we have all the answers. We'll show up as our full, messy selves, which hopefully gives you the space to do the same. We approach facilitation from a mindset that all participants have something valuable to offer and meaningful connection happens when we can drop the masks.
     </p>
-    <div style="display:inline-block; border:1px solid rgba(201,168,76,0.2); padding:1.5rem 3rem;" class="reveal">
-      <p style="font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold-dim);">Guide bios coming soon</p>
+
+    <div class="hosts-grid">
+
+      <!-- Rebekah -->
+      <div class="host-card reveal">
+        <div class="host-image-wrap">
+          <img src="IMG_3546.jpeg" alt="Rebekah Baldwin" />
+        </div>
+        <div class="host-text">
+          <h3 class="host-name">Rebekah Baldwin</h3>
+          <p class="host-role">Psychology Lecturer · Holistic Life Coach · Group Facilitator</p>
+          <p class="host-bio">Rebekah Baldwin is a psychology lecturer, certified holistic life coach, and group facilitator whose work centers on helping people reconnect with themselves, one another, and the deeper meaning woven through everyday life. With a background in somatic and ecopsychology and years of experience guiding reflective and experiential gatherings, Rebekah creates spaces that invite curiosity, presence, and genuine connection. Her approach blends psychological insight with embodied practices and thoughtful conversation — offering opportunities for self-reflection and intention setting, along with practical tools and strategies for everyday life. Her deepest commitment is to nurturing individual well-being and meaningful community as the foundation for creating a more beautiful world together.</p>
+        </div>
+      </div>
+
+      <!-- Rachel -->
+      <div class="host-card reveal">
+        <div class="host-image-wrap">
+          <img src="314A1689-4-3872.jpeg" alt="Rachel Blum" />
+        </div>
+        <div class="host-text">
+          <h3 class="host-name">Rachel Blum</h3>
+          <p class="host-role">Artist · Sound Healer · Mindfulness Facilitator</p>
+          <p class="host-bio">Rachel has a gift for creating spaces where women remember who they are. As co-founder of the Atlanta-based sacred bass duo SurprisinglySimple, she has spent years weaving live vocal harmonics, guided meditation, and intentional presence into experiences that are simultaneously electrifying and deeply stilling — the kind that linger in the body long after the music stops.<br/><br/>With over a decade of meditation facilitation and a background in neuroscience-based mindfulness, she brings both rigor and magic to her work. People leave her sessions describing it as <em>remembering themselves at the core of their being</em> — a clarity that feels less like learning something new and more like coming home to what was always there.<br/><br/>Rachel believes every woman carries an infinite well of inner resources. Her work at this retreat is simple: help you find your way back to it.</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
