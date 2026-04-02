@@ -643,23 +643,25 @@
       font-style: italic;
     }
 
-    /* Programming row: framed text left, moon image right */
+    /* Programming row: full-width outer frame, text left, moon right */
     .pricing-prog-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
       margin-bottom: 2.5rem;
-      align-items: stretch;
     }
 
     .pricing-programming {
       border: 1px solid rgba(201,168,76,0.3);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: rgba(255,255,255,0.02);
+      overflow: hidden;
+    }
+
+    .pricing-prog-text {
       padding: 2.5rem 2.5rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap: 0.8rem;
-      background: rgba(255,255,255,0.02);
     }
 
     .pricing-prog-label {
@@ -684,8 +686,19 @@
     }
 
     .pricing-moon-wrap {
-      overflow: hidden;
       position: relative;
+      border-left: 1px solid rgba(201,168,76,0.3);
+      overflow: hidden;
+    }
+
+    /* Inner gold frame on the image */
+    .pricing-moon-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(201,168,76,0.3);
+      pointer-events: none;
+      z-index: 2;
     }
 
     .pricing-moon-wrap img {
@@ -696,6 +709,34 @@
       object-position: center 40%;
       -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%);
       mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%);
+    }
+
+    @media (max-width: 768px) {
+      .pricing-programming {
+        grid-template-columns: 1fr;
+        border: none;
+        background: none;
+        gap: 1.5rem;
+      }
+
+      /* Mobile: image gets its own standalone frame above the text box */
+      .pricing-moon-wrap {
+        order: -1;
+        height: 250px;
+        border: 1px solid rgba(201,168,76,0.3);
+        border-left: 1px solid rgba(201,168,76,0.3);
+      }
+
+      .pricing-moon-wrap img {
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
+      }
+
+      /* Mobile: text box gets its own border */
+      .pricing-prog-text {
+        border: 1px solid rgba(201,168,76,0.3);
+        background: rgba(255,255,255,0.02);
+      }
     }
 
     .pricing-lodging-wrap { margin-bottom: 2.5rem; }
@@ -809,16 +850,6 @@
     .pricing-contact a:hover { color: var(--gold); }
 
     @media (max-width: 768px) {
-      .pricing-prog-wrap {
-        grid-template-columns: 1fr;
-      }
-      .pricing-moon-wrap {
-        height: 220px;
-      }
-      .pricing-moon-wrap img {
-        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%);
-        mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%);
-      }
       .pricing-table th,
       .pricing-table td { padding: 0.9rem 1rem; }
     }
@@ -1271,12 +1302,14 @@
 
       <div class="pricing-prog-wrap reveal">
         <div class="pricing-programming">
-          <div class="pricing-prog-label">Retreat Programming</div>
-          <div class="pricing-prog-note">Includes all workshops, facilitated experiences &amp; meals</div>
-          <div class="pricing-prog-price">$497</div>
-        </div>
-        <div class="pricing-moon-wrap">
-          <img src="Full-moon.jpg" alt="Full moon rising over trees" />
+          <div class="pricing-prog-text">
+            <div class="pricing-prog-label">Retreat Programming</div>
+            <div class="pricing-prog-note">Includes all workshops, facilitated experiences &amp; meals</div>
+            <div class="pricing-prog-price">$497</div>
+          </div>
+          <div class="pricing-moon-wrap">
+            <img src="Full-moon.jpg" alt="Full moon rising over trees" />
+          </div>
         </div>
       </div>
 
