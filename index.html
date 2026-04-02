@@ -982,6 +982,136 @@
       .pricing-table td { padding: 0.9rem 1rem; }
     }
 
+    /* ── FAQ ── */
+    .faq-bg {
+      background: linear-gradient(to bottom, var(--black), var(--deep), var(--black));
+      padding: 6rem 2rem;
+    }
+
+    .faq-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .faq-inner .section-title {
+      margin-bottom: 3rem;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .faq-item {
+      border: 1px solid rgba(201,168,76,0.18);
+      border-bottom: none;
+      background: rgba(255,255,255,0.02);
+      transition: background 0.3s ease;
+    }
+
+    .faq-item:last-child {
+      border-bottom: 1px solid rgba(201,168,76,0.18);
+    }
+
+    .faq-item.open {
+      background: rgba(255,255,255,0.04);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 1.4rem 1.8rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .faq-question span {
+      font-family: 'Cinzel', serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      color: var(--cream);
+      line-height: 1.5;
+      transition: color 0.2s ease;
+    }
+
+    .faq-item.open .faq-question span,
+    .faq-question:hover span {
+      color: var(--gold-light);
+    }
+
+    .faq-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: var(--gold-dim);
+      transition: transform 0.4s ease, color 0.2s ease;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(180deg);
+      color: var(--gold);
+    }
+
+    .faq-question:hover .faq-icon {
+      color: var(--gold);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 1.8rem;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 600px;
+      padding: 0 1.8rem 1.6rem;
+    }
+
+    .faq-answer p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: rgba(240,232,216,0.75);
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-answer p:last-child { margin-bottom: 0; }
+
+    .faq-answer ul {
+      margin: 0.5rem 0 0.8rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .faq-answer ul li {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.75);
+    }
+
+    .faq-answer a {
+      color: var(--gold-dim);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease;
+    }
+
+    .faq-answer a:hover { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .faq-question { padding: 1.2rem 1.2rem; }
+      .faq-answer { padding: 0 1.2rem; }
+      .faq-item.open .faq-answer { padding: 0 1.2rem 1.4rem; }
+      .faq-question span { font-size: 0.76rem; }
+    }
+
     /* ── CTA ── */
     .cta-section {
       background:
@@ -1589,6 +1719,206 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <div id="faq" class="faq-bg">
+    <div class="faq-inner">
+      <div class="reveal" style="text-align:center;">
+        <span class="section-label">Questions & Answers</span>
+        <h2 class="section-title">Everything you need to know.</h2>
+      </div>
+
+      <div class="faq-list reveal">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Who is this retreat for?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>This retreat is designed for women who are craving time to slow down, reflect, and reconnect — with themselves, with others, and with the deeper rhythms of life. You do not need any prior experience with retreats, mindfulness practices, or personal development work to attend. If you're feeling drawn to meaningful conversation, time in nature, and the opportunity to step away from daily responsibilities for a weekend of restoration and connection, this retreat is likely a good fit for you.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>I'm coming alone. Will that feel awkward?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Not at all. Many participants attend retreats on their own, and it's often one of the most meaningful ways to experience the weekend. The retreat is intentionally designed to create a welcoming and supportive group environment where conversations and connections can unfold naturally. By the end of the weekend, most participants find they've formed genuine connections with people they may not have met otherwise.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is this a spiritual retreat?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>The Practical Magic Retreat is not affiliated with any particular religion or spiritual tradition. Our approach is grounded in psychology, reflection, nature connection, and meaningful conversation. Some of the practices we explore — such as mindfulness, intention setting, and group reflection — may feel personally meaningful or even spiritual for some participants, but everyone is welcome to engage with the experience in whatever way feels authentic to them.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do I need to be physically active to attend?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>No special level of fitness is required to participate in the retreat. Most activities will involve gentle movement, reflective exercises, and time spent outdoors, but everything will be accessible and adaptable to different comfort levels. Participants are always encouraged to listen to their bodies and participate in ways that feel supportive for them. If you have questions about accessibility or specific needs, please reach out — we're happy to discuss how to make the experience comfortable for you.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Where will the retreat be held?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>The retreat will take place in Dahlonega, Georgia. The exact address and arrival details will be shared with registered participants prior to the retreat.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is lodging and food included?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Your retreat payment includes both lodging and meals for the weekend. The total investment depends on the accommodation option you select and whether you register during the early bird pricing period.</p>
+            <p>Meals provided include:</p>
+            <ul>
+              <li>Friday dinner</li>
+              <li>Saturday breakfast, lunch, and dinner</li>
+              <li>Sunday breakfast</li>
+              <li>Snacks available throughout the weekend</li>
+            </ul>
+            <p>You are also welcome to bring any additional snacks you'd like for yourself. We are happy to accommodate most dietary restrictions and allergies with advance notice, so please share any needs when completing your registration.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What are the accommodations like?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>The retreat home offers a mix of shared bunk-style rooms as well as queen and king bedrooms that can be reserved privately or shared with another guest. All bathrooms in the home are shared among retreat participants. We ask everyone to be mindful of shared spaces and to help create a respectful and supportive communal environment throughout the weekend.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I share a room with someone I choose?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! If you'd like to attend with a friend, partner, or family member, you can book a private room to share together. In this case, the lodging cost for that room can be split between you. Each participant must still register individually and pay the $497 retreat programming fee.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I have my own room?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Private room options are available and can be selected during registration.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is transportation to the retreat venue provided?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Transportation is not provided, so participants will need to arrange their own travel to the retreat location.</p>
+            <p>We ask that all participants plan to arrive no later than 5:00 PM on Friday, so everyone can be present for the opening ceremony beginning at 5:30 PM. Please plan your travel and work schedules accordingly.</p>
+            <p>If this timing presents a challenge but you're still interested in attending, feel free to reach out at <a href="mailto:practicalmagicretreat@gmail.com">practicalmagicretreat@gmail.com</a> and we'll do our best to discuss possible options.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What does a typical day look like?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Each day will include a mix of guided workshops, reflective practices, shared meals, and unstructured time to rest or explore the property. Some activities will take place as a full group, while others will allow space for quieter reflection or small group conversation.</p>
+            <p>While the retreat schedule is thoughtfully designed, we also believe that spaciousness is an important part of the experience, so there will be time to relax, enjoy the surroundings, journal, or connect informally with other participants. A more detailed schedule will be shared with participants closer to the retreat date.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do I have to participate in everything?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>No. While we encourage participants to engage with the retreat experience as fully as they feel comfortable, all activities are optional. This weekend is meant to support your well-being, and you're always welcome to listen to your needs — whether that means joining a session, taking a quiet walk, resting, or spending time in reflection.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How many people will attend the retreat?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>To keep the experience intimate and meaningful, the retreat will be limited to 12 participants, not including your guides. This smaller group size allows for deeper conversation, personal reflection, and genuine connection throughout the weekend.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>I'm feeling nervous about signing up. Can I talk with someone first?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely! If you're feeling curious but still unsure whether the retreat is right for you, we'd be happy to talk. You're welcome to <a href="https://calendar.app.google/bYnRAG7tAuKbhADXA" target="_blank" rel="noopener">schedule a free exploration call</a> where we can answer your questions and help you decide if the retreat feels like a good fit.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I leave the retreat and return?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>We understand that unexpected situations can arise. If an emergency requires you to leave the retreat temporarily or early, you are welcome to do so. However, refunds cannot be provided for any portion of the retreat that is missed, and we encourage participants to stay for the full experience.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is my retreat booking refundable or transferable?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>A non-refundable deposit of $100 is required to secure your spot.</p>
+            <ul>
+              <li>Cancellations made before September 1 are eligible for a 50% refund minus the $100 deposit</li>
+              <li>After September 1, bookings are non-refundable</li>
+            </ul>
+            <p>Transfers to another participant are not guaranteed but may be considered on a case-by-case basis.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How do I contact you for more information?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>We're happy to answer any questions you have! You can <a href="mailto:practicalmagicretreat@gmail.com">email us</a> at any time, or <a href="https://calendar.app.google/bYnRAG7tAuKbhADXA" target="_blank" rel="noopener">schedule a free exploration call</a> to learn more about the retreat and see if it feels like a good fit.</p>
+          </div>
+        </div>
+
+      </div><!-- end faq-list -->
+    </div><!-- end faq-inner -->
+  </div><!-- end faq-bg -->
+
   <!-- CTA -->
   <div class="cta-section">
     <div class="divider reveal" style="margin-bottom:4rem;">
@@ -1683,6 +2013,27 @@
         mobileMenu.classList.remove('open');
         hamburger.classList.remove('open');
         hamburger.setAttribute('aria-expanded', false);
+      });
+    });
+  </script>
+
+  <script>
+    // FAQ Accordion — one open at a time
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const btn = item.querySelector('.faq-question');
+      btn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        // Close all
+        faqItems.forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        // Open clicked if it wasn't already open
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
       });
     });
   </script>
