@@ -359,7 +359,6 @@
         linear-gradient(135deg, rgba(60,45,110,0.18) 0%, rgba(80,50,140,0.12) 50%, rgba(45,35,90,0.2) 100%),
         var(--bark);
       padding: 6rem 2rem;
-      text-align: center;
       position: relative;
       overflow: hidden;
     }
@@ -367,8 +366,7 @@
     .quote-band::before {
       content: '\201C';
       position: absolute;
-      top: -2rem; left: 50%;
-      transform: translateX(-50%);
+      top: -2rem; right: 4%;
       font-family: 'Cinzel Decorative', serif;
       font-size: 18rem;
       color: rgba(201,168,76,0.04);
@@ -376,16 +374,52 @@
       line-height: 1;
     }
 
+    .quote-band-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .quote-image-wrap {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .quote-image-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border: 1px solid rgba(201,168,76,0.25);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .quote-image-wrap img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center 30%;
+      -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
+      mask-image: linear-gradient(to right, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
+    }
+
+    .quote-content {
+      position: relative;
+      z-index: 1;
+      text-align: left;
+    }
+
     .quote-text {
       font-family: 'EB Garamond', serif;
       font-style: italic;
-      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      font-size: clamp(1.4rem, 2.5vw, 2.1rem);
       color: var(--cream);
-      max-width: 800px;
-      margin: 0 auto 1.5rem;
-      line-height: 1.5;
-      position: relative;
-      z-index: 1;
+      margin-bottom: 1.5rem;
+      line-height: 1.55;
     }
 
     .quote-attr {
@@ -504,6 +538,14 @@
       .detail-item { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.2); }
       .detail-item:last-child { border-bottom: none; }
       .hero-title-wrap svg.ring { width: 380px; height: 380px; }
+      .quote-band-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .quote-image-wrap img {
+        aspect-ratio: 4 / 3;
+        object-position: center 40%;
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+      }
+      .quote-content { text-align: center; }
     }
   </style>
 </head>
@@ -637,7 +679,7 @@
       <div class="line"></div>
     </div>
 
-    <a href="https://form.jotform.com/260767943027060" class="btn-primary" target="_blank" rel="noopener">
+    <a href="YOUR_JOTFORM_LINK_HERE" class="btn-primary" target="_blank" rel="noopener">
       Express Your Interest
     </a>
 
@@ -666,10 +708,17 @@
 
   <!-- QUOTE BAND -->
   <div class="quote-band">
-    <p class="quote-text reveal">
-      "At the intersection of strategy &amp; spirituality, pragmatism &amp; possibility, lies practical magic — the kind that blooms when women gather to rest, play and reconnect with themselves &amp; each other."
-    </p>
-    <p class="quote-attr reveal">Practical Magic Retreat &nbsp;·&nbsp; November 2026</p>
+    <div class="quote-band-inner">
+      <div class="quote-image-wrap reveal">
+        <img src="Candle-hand-flowers.jpg" alt="Candle and flowers" />
+      </div>
+      <div class="quote-content">
+        <p class="quote-text reveal">
+          "At the intersection of strategy &amp; spirituality, pragmatism &amp; possibility, lies practical magic — the kind that blooms when women gather to rest, play and reconnect with themselves &amp; each other."
+        </p>
+        <p class="quote-attr reveal">Practical Magic Retreat &nbsp;·&nbsp; November 2026</p>
+      </div>
+    </div>
   </div>
 
   <!-- WHAT TO EXPECT -->
@@ -760,7 +809,7 @@
     <p class="section-body reveal" style="text-align:center; margin: 0 auto 3rem;">
       If you're craving solace from the grind, a new way of relating to the everyday, and deep, meaningful connection — this is your invitation. You might even meet your new soul sisters.
     </p>
-    <a href="https://form.jotform.com/260767943027060" class="btn-primary reveal" target="_blank" rel="noopener">
+    <a href="YOUR_JOTFORM_LINK_HERE" class="btn-primary reveal" target="_blank" rel="noopener">
       Express Your Interest
     </a>
     <p class="cta-note reveal">Spots are limited &nbsp;·&nbsp; Interest form takes 2 minutes</p>
