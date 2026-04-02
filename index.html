@@ -27,6 +27,130 @@
 
     html { scroll-behavior: smooth; }
 
+    /* ── NAV ── */
+    .site-nav {
+      position: relative;
+      z-index: 100;
+      width: 100%;
+      background: rgba(18, 16, 42, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .nav-wordmark {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color 0.2s ease;
+    }
+    .nav-wordmark:hover { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(240,232,216,0.6);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { color: var(--gold-light); }
+
+    .nav-cta {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--black) !important;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      padding: 0.55rem 1.4rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+    .nav-cta:hover {
+      background: linear-gradient(135deg, #f0d98a, var(--gold-light));
+      box-shadow: 0 4px 18px rgba(201,168,76,0.25);
+      color: var(--black) !important;
+    }
+
+    /* Hamburger */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--gold-dim);
+      transition: all 0.3s ease;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    /* Mobile menu */
+    .nav-mobile {
+      display: none;
+      flex-direction: column;
+      background: rgba(18, 16, 42, 0.97);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      padding: 1.5rem 2rem 2rem;
+      gap: 1.5rem;
+    }
+    .nav-mobile.open { display: flex; }
+
+    .nav-mobile a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(240,232,216,0.65);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .nav-mobile a:hover { color: var(--gold-light); }
+
+    .nav-mobile .nav-cta {
+      align-self: flex-start;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+    }
+
     body {
       background-color: var(--black);
       color: var(--cream);
@@ -674,6 +798,32 @@
 </head>
 <body>
 
+  <!-- NAV -->
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="nav-inner">
+      <a href="#" class="nav-wordmark">Practical Magic</a>
+      <ul class="nav-links" role="list">
+        <li><a href="#experience">The Experience</a></li>
+        <li><a href="#hosts">Your Hosts</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#accommodations">Accommodations</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="YOUR_JOTFORM_LINK_HERE" class="nav-cta" target="_blank" rel="noopener">Express Your Interest</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" role="menu">
+      <a href="#experience" role="menuitem">The Experience</a>
+      <a href="#hosts" role="menuitem">Your Hosts</a>
+      <a href="#pricing" role="menuitem">Pricing</a>
+      <a href="#accommodations" role="menuitem">Accommodations</a>
+      <a href="#faq" role="menuitem">FAQ</a>
+      <a href="YOUR_JOTFORM_LINK_HERE" class="nav-cta" target="_blank" rel="noopener" role="menuitem">Express Your Interest</a>
+    </div>
+  </nav>
+
   <!-- HERO -->
   <div class="hero">
     <p class="hero-eyebrow">North Georgia Mountains &nbsp;·&nbsp; November 13–15, 2026</p>
@@ -847,7 +997,7 @@
   </div>
 
   <!-- WHAT TO EXPECT -->
-  <div class="pillars-bg">
+  <div id="experience" class="pillars-bg">
     <div class="pillars-inner">
       <div class="pillars-header reveal">
         <span class="section-label">What Awaits You</span>
@@ -911,7 +1061,7 @@
   </section>
 
   <!-- YOUR GUIDES -->
-  <section class="guides-section">
+  <section id="hosts" class="guides-section">
     <span class="section-label reveal">Your Hosts</span>
     <h2 class="section-title reveal">Silly. Real. Human.<br/>Believers in the power of play.</h2>
     <p class="guides-blurb reveal">
@@ -1026,5 +1176,24 @@
     setTimeout(() => requestAnimationFrame(animate), 950);
   })();
   </script>
+  <script>
+    // Hamburger menu
+    const hamburger = document.querySelector('.nav-hamburger');
+    const mobileMenu = document.querySelector('.nav-mobile');
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+    // Close mobile menu when a link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', false);
+      });
+    });
+  </script>
+
 </body>
 </html>
