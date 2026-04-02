@@ -623,6 +623,134 @@
       color: rgba(240,232,216,0.8);
     }
 
+    /* ── ACCOMMODATIONS ── */
+    .accom-section {
+      padding: 6rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .accom-desc {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      max-width: 780px;
+      margin: 2rem auto 3.5rem;
+      text-align: center;
+    }
+
+    .accom-desc .section-body {
+      margin: 0 auto;
+    }
+
+    /* Full-width aerial hero */
+    .accom-hero-wrap {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .accom-hero-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border: 1px solid rgba(201,168,76,0.25);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .accom-hero-wrap img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    /* Grids */
+    .accom-grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .accom-grid-2 { grid-template-columns: 1fr 1fr; }
+    .accom-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+    .accom-item {
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    /* Gold frame on each photo */
+    .accom-item::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border: 1px solid rgba(201,168,76,0.25);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .accom-item img {
+      display: block;
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      object-position: center center;
+      transition: transform 0.5s ease;
+    }
+
+    .accom-grid-2 .accom-item img { height: 340px; }
+
+    .accom-item:hover img { transform: scale(1.03); }
+
+    /* Caption: revealed on hover desktop, always visible mobile */
+    figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(18,16,42,0.85) 0%, transparent 100%);
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 1.5rem 1rem 0.9rem;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .accom-item:hover figcaption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .accom-grid-2,
+      .accom-grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .accom-item img,
+      .accom-grid-2 .accom-item img {
+        height: 260px;
+      }
+
+      .accom-hero-wrap { height: 280px; }
+
+      /* Captions always visible on mobile */
+      figcaption {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     /* ── PRICING ── */
     .pricing-bg {
       background: linear-gradient(to bottom, var(--black), var(--deep), var(--black));
@@ -1348,6 +1476,81 @@
       </div>
     </div>
   </div>
+
+  <!-- ACCOMMODATIONS -->
+  <section id="accommodations" class="accom-section">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-label">Where You'll Stay</span>
+      <h2 class="section-title">A private riverside cabin<br/>tucked into 7.5 wooded acres.</h2>
+    </div>
+
+    <div class="accom-desc reveal">
+      <p class="section-body">Our retreat will take place at a beautiful private riverside cabin just outside Dahlonega, set on 7.5 wooded acres along the Etowah River. The spacious home is designed for gathering and relaxation, with expansive porches overlooking the woods and water, cozy indoor living spaces, and amenities like a hot tub, barrel sauna, fire pit, and riverfront seating areas perfect for reflection or connection.</p>
+      <p class="section-body">The house includes a variety of bedroom layouts to support different comfort levels: bunk rooms for those choosing the shared accommodation option, as well as queen and king bedrooms that may be reserved either privately or shared with another guest.</p>
+    </div>
+
+    <!-- Full-width hero image -->
+    <div class="accom-hero-wrap reveal">
+      <img src="IMG_3562.jpeg" alt="Aerial view of the cabin nestled in fall foliage along the Etowah River" />
+    </div>
+
+    <!-- Row 1: two columns -->
+    <div class="accom-grid accom-grid-2 reveal">
+      <figure class="accom-item">
+        <img src="IMG_3557.jpeg" alt="View of the cabin from the river at dusk with string lights" />
+        <figcaption>Riverside access</figcaption>
+      </figure>
+      <figure class="accom-item">
+        <img src="IMG_3550.jpeg" alt="Cabin exterior at dusk" />
+        <figcaption>The cabin</figcaption>
+      </figure>
+    </div>
+
+    <!-- Row 2: three columns -->
+    <div class="accom-grid accom-grid-3 reveal">
+      <figure class="accom-item">
+        <img src="IMG_3554.jpeg" alt="Fire pit with Adirondack chairs at dusk" />
+        <figcaption>Fire pit</figcaption>
+      </figure>
+      <figure class="accom-item">
+        <img src="IMG_3561.jpeg" alt="Hammock in the woods" />
+        <figcaption>Hammock</figcaption>
+      </figure>
+      <figure class="accom-item">
+        <img src="IMG_3551.jpeg" alt="Etowah River in fall foliage" />
+        <figcaption>Etowah River</figcaption>
+      </figure>
+    </div>
+
+    <!-- Row 3: two columns -->
+    <div class="accom-grid accom-grid-2 reveal">
+      <figure class="accom-item">
+        <img src="IMG_3553.jpeg" alt="Hot tub on the deck at dusk" />
+        <figcaption>Hot tub</figcaption>
+      </figure>
+      <figure class="accom-item">
+        <img src="IMG_3552.jpeg" alt="Barrel sauna in the woods" />
+        <figcaption>Barrel sauna</figcaption>
+      </figure>
+    </div>
+
+    <!-- Row 4: three columns -->
+    <div class="accom-grid accom-grid-3 reveal">
+      <figure class="accom-item">
+        <img src="IMG_3558.jpeg" alt="Covered wraparound porch with rocking chairs" />
+        <figcaption>Wraparound porch</figcaption>
+      </figure>
+      <figure class="accom-item">
+        <img src="IMG_3559.jpeg" alt="Open kitchen with island and wooden beams" />
+        <figcaption>Open kitchen</figcaption>
+      </figure>
+      <figure class="accom-item">
+        <img src="IMG_3560.jpeg" alt="Coffee bar and open living space" />
+        <figcaption>Common spaces</figcaption>
+      </figure>
+    </div>
+
+  </section>
 
   <!-- YOUR GUIDES -->
   <section id="hosts" class="guides-section">
