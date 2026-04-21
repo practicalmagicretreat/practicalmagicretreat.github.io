@@ -251,7 +251,7 @@
       letter-spacing: 0.35em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 5rem;
+      margin-bottom: 9rem;
       opacity: 0;
       animation: fadeUp 1s ease forwards 0.3s;
     }
@@ -269,9 +269,10 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 560px;
-      height: 560px;
+      width: 600px;
+      height: 600px;
       pointer-events: none;
+      z-index: 0;
     }
 
     @keyframes slowSpin {
@@ -307,7 +308,7 @@
       font-size: clamp(1.15rem, 2.5vw, 1.55rem);
       color: var(--cream);
       max-width: 560px;
-      margin: 5rem auto 1.2rem;
+      margin: 9rem auto 1.2rem;
       opacity: 0;
       animation: fadeUp 1.2s ease forwards 0.9s;
     }
@@ -1442,108 +1443,66 @@
     <div class="hero-title-wrap">
       <svg class="ring" id="rootRing" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" style="animation: slowSpin 80s linear infinite 7s;">
 
-        <!-- STRAND 1: r~190, perfectly centered on 250,250 -->
-        <path id="s1" pathLength="1000"
+        <!-- Perfect circles, all centered at 250,250 -->
+
+        <!-- STRAND 1: main ring r=220 -->
+        <circle id="s1" cx="250" cy="250" r="220"
+          pathLength="1000"
           stroke-dasharray="1000" stroke-dashoffset="1000"
-          stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"
-          d="M 250,440
-             C 276,440 301,433 322,420
-             C 345,406 363,385 373,361
-             C 384,336 385,308 377,283
-             C 369,257 353,234 331,218
-             C 308,202 281,194 253,194
-             C 225,194 198,203 176,220
-             C 153,237 137,261 130,288
-             C 122,315 124,344 135,370
-             C 147,396 167,418 192,431
-             C 216,443 250,440 250,440 Z"
+          stroke-width="2.2" stroke-linecap="round" fill="none"
         />
 
-        <!-- STRAND 2: r~205, phase +40deg, centered on 250,250 -->
-        <path id="s2" pathLength="1000"
+        <!-- STRAND 2: outer ring r=232 -->
+        <circle id="s2" cx="250" cy="250" r="232"
+          pathLength="1000"
           stroke-dasharray="1000" stroke-dashoffset="1000"
-          stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"
-          d="M 268,454
-             C 294,450 318,440 338,423
-             C 360,405 375,381 381,354
-             C 388,326 384,296 371,270
-             C 358,243 337,221 311,209
-             C 285,196 255,193 227,200
-             C 198,208 173,225 155,250
-             C 136,275 127,306 130,336
-             C 133,366 146,394 167,415
-             C 189,437 218,450 248,454
-             C 255,455 268,454 268,454 Z"
+          stroke-width="1.5" stroke-linecap="round" fill="none"
         />
 
-        <!-- STRAND 3: r~175, phase -40deg, centered on 250,250 -->
-        <path id="s3" pathLength="1000"
+        <!-- STRAND 3: inner ring r=208 -->
+        <circle id="s3" cx="250" cy="250" r="208"
+          pathLength="1000"
           stroke-dasharray="1000" stroke-dashoffset="1000"
-          stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" fill="none"
-          d="M 232,424
-             C 255,428 278,422 297,408
-             C 317,393 330,371 334,347
-             C 338,322 332,295 318,273
-             C 304,251 283,235 259,228
-             C 234,221 207,224 185,236
-             C 162,249 146,271 140,297
-             C 134,323 139,351 153,374
-             C 168,397 191,414 218,421
-             C 223,423 232,424 232,424 Z"
+          stroke-width="1.1" stroke-linecap="round" fill="none"
         />
 
-        <!-- STRAND 4: r~215, outermost wispy dashed, centered on 250,250 -->
-        <path id="s4" pathLength="1000"
+        <!-- STRAND 4: outermost wispy dashed r=244 -->
+        <circle id="s4" cx="250" cy="250" r="244"
+          pathLength="1000"
           stroke-dasharray="14 10 4 18 8 12 3 20 9 13" stroke-dashoffset="1000"
-          stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" fill="none"
-          d="M 250,465
-             C 279,465 307,457 330,442
-             C 356,425 375,400 384,371
-             C 394,341 392,308 380,280
-             C 368,251 347,227 320,212
-             C 293,197 262,191 232,196
-             C 201,202 173,218 152,242
-             C 130,267 119,299 120,330
-             C 121,362 133,393 154,417
-             C 175,441 204,456 235,463
-             C 240,464 250,465 250,465 Z"
+          stroke-width="0.7" stroke-linecap="round" fill="none"
         />
 
-        <!-- Fairy dust -->
+        <!-- Fairy dust dots — mathematically placed at r=244, centered 250,250 -->
         <g id="dustGroup">
-          <circle class="dust" cx="250" cy="443" r="2.2" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="213" cy="440" r="1.4" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="178" cy="429" r="2.0" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="146" cy="412" r="1.5" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="117" cy="390" r="2.2" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="93" cy="362" r="1.4" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="74" cy="330" r="2.0" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="62" cy="296" r="1.5" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="57" cy="259" r="2.2" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="59" cy="223" r="1.4" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="68" cy="187" r="2.0" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="83" cy="154" r="1.5" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="104" cy="124" r="2.2" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="131" cy="98" r="1.4" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="162" cy="78" r="2.0" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="196" cy="65" r="1.5" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="232" cy="58" r="2.2" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="268" cy="58" r="1.4" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="304" cy="65" r="2.0" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="338" cy="78" r="1.5" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="369" cy="98" r="2.2" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="396" cy="124" r="1.4" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="417" cy="153" r="2.0" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="432" cy="187" r="1.5" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="441" cy="223" r="2.2" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="443" cy="259" r="1.4" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="438" cy="296" r="2.0" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="426" cy="330" r="1.5" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="407" cy="362" r="2.2" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="383" cy="390" r="1.4" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="354" cy="412" r="2.0" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="322" cy="429" r="1.5" fill="rgba(240,232,216,0)"/>
-          <circle class="dust" cx="287" cy="440" r="2.2" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="250.0" cy="6.0"   r="2.2" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="304.3" cy="12.1"  r="1.4" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="355.9" cy="30.2"  r="2.0" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="402.1" cy="59.2"  r="1.5" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="440.8" cy="97.9"  r="2.2" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="469.8" cy="144.1" r="1.4" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="487.9" cy="195.7" r="2.0" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="494.0" cy="250.0" r="1.5" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="487.9" cy="304.3" r="2.2" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="469.8" cy="355.9" r="1.4" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="440.8" cy="402.1" r="2.0" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="402.1" cy="440.8" r="1.5" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="355.9" cy="469.8" r="2.2" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="304.3" cy="487.9" r="1.4" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="250.0" cy="494.0" r="2.0" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="195.7" cy="487.9" r="1.5" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="144.1" cy="469.8" r="2.2" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="97.9"  cy="440.8" r="1.4" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="59.2"  cy="402.1" r="2.0" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="30.2"  cy="355.9" r="1.5" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="12.1"  cy="304.3" r="2.2" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="6.0"   cy="250.0" r="1.4" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="12.1"  cy="195.7" r="2.0" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="30.2"  cy="144.1" r="1.5" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="59.2"  cy="97.9"  r="2.2" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="97.9"  cy="59.2"  r="1.4" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="144.1" cy="30.2"  r="2.0" fill="rgba(240,232,216,0)"/>
+          <circle class="dust" cx="195.7" cy="12.1"  r="1.5" fill="rgba(240,232,216,0)"/>
         </g>
 
       </svg>
