@@ -27,6 +27,36 @@
 
     html { scroll-behavior: smooth; }
 
+    /* ── ANNOUNCEMENT BAR ── */
+    .announce-bar {
+      width: 100%;
+      background: linear-gradient(135deg, var(--gold-dim), #5a4520, var(--gold-dim));
+      padding: 0.6rem 2rem;
+      text-align: center;
+    }
+
+    .announce-bar p {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cream);
+      line-height: 1.5;
+    }
+
+    .announce-bar a {
+      color: var(--gold-light);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(232,201,122,0.4);
+      transition: color 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .announce-bar a:hover {
+      color: #fff;
+      border-color: rgba(255,255,255,0.6);
+    }
+
     /* ── NAV ── */
     .site-nav {
       position: relative;
@@ -338,32 +368,6 @@
       box-shadow: 0 8px 30px rgba(201,168,76,0.3);
     }
 
-    .scroll-hint {
-      position: absolute;
-      bottom: 2.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: 'Cinzel', serif;
-      font-size: 0.65rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold-dim);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      opacity: 0;
-      animation: fadeUp 1s ease forwards 2s;
-    }
-
-    .scroll-hint::after {
-      content: '';
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, var(--gold-dim), transparent);
-      animation: scrollPulse 2s ease-in-out infinite;
-    }
-
     /* ── DIVIDER ── */
     .divider {
       display: flex;
@@ -510,17 +514,6 @@
       padding: 6rem 2rem;
       position: relative;
       overflow: hidden;
-    }
-
-    .quote-band::before {
-      content: '\201C';
-      position: absolute;
-      top: -2rem; right: 4%;
-      font-family: 'Cinzel Decorative', serif;
-      font-size: 18rem;
-      color: rgba(201,168,76,0.04);
-      pointer-events: none;
-      line-height: 1;
     }
 
     .quote-band-inner {
@@ -749,6 +742,53 @@
         opacity: 1;
         transform: translateY(0);
       }
+    }
+
+    /* ── YEATS QUOTE ── */
+    .yeats-band {
+      background:
+        linear-gradient(135deg, rgba(60,45,110,0.18) 0%, rgba(80,50,140,0.12) 50%, rgba(45,35,90,0.2) 100%),
+        var(--bark);
+      padding: 5rem 2rem;
+    }
+
+    .yeats-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .yeats-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .yeats-divider .line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+    }
+
+    .yeats-quote {
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      color: var(--cream);
+      line-height: 1.6;
+    }
+
+    .yeats-attr {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
     }
 
     /* ── PRICING ── */
@@ -982,6 +1022,67 @@
       .pricing-table td { padding: 0.9rem 1rem; }
     }
 
+    /* ── GUEST FACILITATOR ── */
+    .guest-bg {
+      background: linear-gradient(to bottom, var(--black), var(--deep), var(--black));
+      padding: 6rem 2rem;
+    }
+
+    .guest-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .guest-inner .section-title {
+      margin-bottom: 3rem;
+    }
+
+    .guest-card {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3.5rem;
+      align-items: start;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(201,168,76,0.18);
+      padding: 2.5rem;
+    }
+
+    .guest-image-wrap {
+      position: relative;
+      width: 100%;
+    }
+
+    .guest-image-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border: 1px solid rgba(201,168,76,0.25);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .guest-image-wrap img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      object-fit: cover;
+      object-position: center top;
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+    }
+
+    @media (max-width: 768px) {
+      .guest-card {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1.8rem;
+      }
+
+      .guest-image-wrap img {
+        aspect-ratio: 3 / 4;
+      }
+    }
+
     /* ── FAQ ── */
     .faq-bg {
       background: linear-gradient(to bottom, var(--black), var(--deep), var(--black));
@@ -1145,6 +1246,22 @@
     .footer-tagline { font-family: 'EB Garamond', serif; font-style: italic; font-size: 0.95rem; color: rgba(240,232,216,0.4); margin-bottom: 1.5rem; }
     .footer-fine { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(240,232,216,0.2); }
 
+    .footer-instagram {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-instagram:hover { color: var(--gold); }
+
     /* ── HOSTS ── */
     .hosts-grid {
       display: grid;
@@ -1286,6 +1403,11 @@
   </style>
 </head>
 <body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announce-bar">
+    <p>Early bird pricing drops first for our list — join it free, no commitment. <a href="https://form.jotform.com/260767943027060" target="_blank" rel="noopener">Sign me up →</a></p>
+  </div>
 
   <!-- NAV -->
   <nav class="site-nav" aria-label="Site navigation">
@@ -1445,7 +1567,6 @@
       Express Your Interest
     </a>
 
-    <div class="scroll-hint">Scroll</div>
   </div>
 
   <!-- ABOUT -->
@@ -1548,6 +1669,26 @@
       </div>
     </div>
   </section>
+
+  <!-- YEATS QUOTE -->
+  <div class="yeats-band">
+    <div class="yeats-inner reveal">
+      <div class="yeats-divider">
+        <div class="line"></div>
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" style="color:var(--gold-dim);"><polygon points="10,1 12,7 18,7 13,11 15,17 10,13 5,17 7,11 2,7 8,7"/></svg>
+        <div class="line"></div>
+      </div>
+      <blockquote class="yeats-quote">
+        "The world is full of magical things, patiently waiting on our senses to grow sharper."
+      </blockquote>
+      <p class="yeats-attr">— William Butler Yeats</p>
+      <div class="yeats-divider">
+        <div class="line"></div>
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" style="color:var(--gold-dim);"><polygon points="10,1 12,7 18,7 13,11 15,17 10,13 5,17 7,11 2,7 8,7"/></svg>
+        <div class="line"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- PRICING -->
   <div id="pricing" class="pricing-bg">
@@ -1719,6 +1860,29 @@
     </div>
   </section>
 
+  <!-- GUEST FACILITATOR -->
+  <div class="guest-bg">
+    <div class="guest-inner">
+      <div class="reveal" style="text-align:center;">
+        <span class="section-label">Guest Facilitator</span>
+        <h2 class="section-title">A special voice<br/>joining the weekend.</h2>
+      </div>
+
+      <div class="guest-card reveal">
+        <div class="guest-image-wrap">
+          <img src="IMG_4388.jpeg" alt="Ashley Clara" />
+        </div>
+        <div class="guest-text">
+          <h3 class="host-name">Ashley Clara</h3>
+          <p class="host-role">Embodiment Facilitator · Multidisciplinary Artist · Creative Director</p>
+          <p class="host-bio">Ashley Clara (serpentene) is an embodiment facilitator, multidisciplinary artist, and creative director who helps women reconnect to themselves through movement, expression, and presence. With over 15 years in performance, styling, and immersive experiences, she brings a grounded and intuitive approach to personal and creative exploration.</p>
+          <br/>
+          <p class="host-bio">Her work centers on archetypal embodiment as a lived practice inspiring participants to move beyond overthinking and into the body, where confidence, creativity, and self-trust can naturally emerge and be expressed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- FAQ -->
   <div id="faq" class="faq-bg">
     <div class="faq-inner">
@@ -1735,7 +1899,17 @@
             <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
           </button>
           <div class="faq-answer">
-            <p>This retreat is designed for women who are craving time to slow down, reflect, and reconnect — with themselves, with others, and with the deeper rhythms of life. You do not need any prior experience with retreats, mindfulness practices, or personal development work to attend. If you're feeling drawn to meaningful conversation, time in nature, and the opportunity to step away from daily responsibilities for a weekend of restoration and connection, this retreat is likely a good fit for you.</p>
+            <p>This retreat is designed for women (any individual whose gender experience aligns with womanhood) who are craving time to slow down, reflect, and reconnect — with themselves, with others, and with the deeper rhythms of life. You do not need any prior experience with retreats, mindfulness practices, or personal development work to attend. If you're feeling drawn to meaningful conversation, time in nature, and the opportunity to step away from daily responsibilities for a weekend of restoration and connection, this retreat is likely a good fit for you.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is this an LGBTQIA+ affirming space?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Practical Magic Retreat is intended to be a welcoming and affirming space for LGBTQIA+ participants. We believe that meaningful community is rooted in respect, care, and the recognition of each person's lived experience. This retreat is open to women, and we define woman broadly and inclusively as anyone whose gender experience aligns with womanhood, based on their own self-identification. This includes trans women and gender-diverse individuals who feel a connection to womanhood. Our intention is to cultivate a space where everyone can feel safe, respected, and able to participate authentically.</p>
           </div>
         </div>
 
@@ -1765,7 +1939,7 @@
             <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
           </button>
           <div class="faq-answer">
-            <p>No special level of fitness is required to participate in the retreat. Most activities will involve gentle movement, reflective exercises, and time spent outdoors, but everything will be accessible and adaptable to different comfort levels. Participants are always encouraged to listen to their bodies and participate in ways that feel supportive for them. If you have questions about accessibility or specific needs, please reach out — we're happy to discuss how to make the experience comfortable for you.</p>
+            <p>No special level of fitness is required to participate in the retreat. Most activities will involve gentle movement, reflective exercises, and time spent outdoors, but everything will be adaptable to different comfort levels. Unfortunately, our venue this time is not wheelchair accessible. Participants are always encouraged to listen to their bodies and participate in ways that feel supportive for them. If you have questions about accessibility or specific needs, please reach out — we're happy to discuss how to make the experience comfortable for you.</p>
           </div>
         </div>
 
@@ -1941,6 +2115,10 @@
   <footer>
     <p class="footer-logo">Practical Magic</p>
     <p class="footer-tagline">A retreat for women who believe in magic and making things happen.</p>
+    <a href="https://www.instagram.com/practicalmagic_retreat" target="_blank" rel="noopener" class="footer-instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+      Follow us on Instagram
+    </a>
     <p class="footer-fine">© 2026 Practical Magic Retreat &nbsp;·&nbsp; North Georgia Mountains &nbsp;·&nbsp; November 13–15</p>
   </footer>
 
