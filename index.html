@@ -1252,6 +1252,95 @@
       margin-top: 1.5rem;
     }
 
+    /* ── MAILCHIMP SECTION ── */
+    .mailchimp-section {
+      background: linear-gradient(to bottom, var(--black), var(--deep), var(--black));
+      padding: 6rem 2rem;
+    }
+
+    .mailchimp-inner {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .mailchimp-sub {
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: rgba(240,232,216,0.65);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── SECONDARY HERO BUTTON ── */
+    .btn-secondary-hero {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding-bottom: 2px;
+      margin-top: 1.2rem;
+      transition: color 0.2s ease, border-color 0.2s ease;
+      opacity: 0;
+      animation: fadeUp 1s ease forwards 1.7s;
+    }
+
+    .btn-secondary-hero:hover {
+      color: var(--gold);
+      border-color: rgba(201,168,76,0.7);
+    }
+
+    /* ── BACK TO TOP ── */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 42px;
+      height: 42px;
+      background: rgba(18,16,42,0.85);
+      border: 1px solid rgba(201,168,76,0.35);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, background 0.2s ease;
+      z-index: 200;
+      text-decoration: none;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .back-to-top:hover {
+      background: rgba(201,168,76,0.12);
+    }
+
+    .back-to-top svg {
+      color: var(--gold-dim);
+      transition: color 0.2s ease;
+    }
+
+    .back-to-top:hover svg { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .back-to-top {
+        bottom: 1.2rem;
+        right: 1.2rem;
+        width: 38px;
+        height: 38px;
+      }
+    }
+
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid rgba(201,168,76,0.15);
@@ -1423,7 +1512,7 @@
 
   <!-- ANNOUNCEMENT BAR -->
   <div class="announce-bar">
-    <p>Early bird pricing drops first for our list — join it free, no commitment. <a href="https://form.jotform.com/260767943027060" target="_blank" rel="noopener">Sign me up →</a></p>
+    <p>Registration is open · Early bird pricing is limited — <a href="https://form.jotform.com/261192791769067" target="_blank" rel="noopener">spots are filling fast →</a></p>
   </div>
 
   <!-- NAV -->
@@ -1436,7 +1525,8 @@
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#accommodations">Accommodations</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="https://form.jotform.com/260767943027060" class="nav-cta" target="_blank" rel="noopener">Express Your Interest</a></li>
+        <li><a href="#mailchimp">Join our list</a></li>
+        <li><a href="https://form.jotform.com/261192791769067" class="nav-cta" target="_blank" rel="noopener">Register Now</a></li>
       </ul>
       <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -1448,7 +1538,8 @@
       <a href="#pricing" role="menuitem">Pricing</a>
       <a href="#accommodations" role="menuitem">Accommodations</a>
       <a href="#faq" role="menuitem">FAQ</a>
-      <a href="https://form.jotform.com/260767943027060" class="nav-cta" target="_blank" rel="noopener" role="menuitem">Express Your Interest</a>
+      <a href="#mailchimp" role="menuitem">Join our list</a>
+      <a href="https://form.jotform.com/261192791769067" class="nav-cta" target="_blank" rel="noopener" role="menuitem">Register Now</a>
     </div>
   </nav>
 
@@ -1538,9 +1629,10 @@
       <div class="line"></div>
     </div>
 
-    <a href="https://form.jotform.com/260767943027060" class="btn-primary" target="_blank" rel="noopener">
-      Express Your Interest
+    <a href="https://form.jotform.com/261192791769067" class="btn-primary" target="_blank" rel="noopener">
+      Register Now
     </a>
+    <a href="#mailchimp" class="btn-secondary-hero">Join our list</a>
 
   </div>
 
@@ -1715,7 +1807,7 @@
 
       <div class="pricing-cta-wrap reveal">
         <p class="pricing-early-bird">By filling out the interest form, you'll have first access to Early Bird pricing when it's live.</p>
-        <a href="https://form.jotform.com/260767943027060" class="btn-primary" target="_blank" rel="noopener" style="opacity:1; animation:none;">Express Your Interest</a>
+        <a href="https://form.jotform.com/261192791769067" class="btn-primary" target="_blank" rel="noopener" style="opacity:1; animation:none;">Register Now</a>
         <p class="pricing-contact">
           <a href="mailto:practicalmagicretreat@gmail.com">Reach out via email</a> with questions or schedule a <a href="https://calendar.app.google/bYnRAG7tAuKbhADXA" target="_blank" rel="noopener">free exploration call</a>.
         </p>
@@ -2051,7 +2143,7 @@
             </ul>
             <p>Because retreat planning requires us to make commitments well in advance, the following cancellation terms apply:</p>
             <ul>
-              <li>Cancellations made before September 1, 2026 are eligible for a refund of all payments made minus $100.</li>
+              <li>Cancellations made before September 1, 2026 are eligible for a refund of all payments made minus a $100.</li>
               <li>Cancellations made on or after September 1, 2026 are non-refundable.</li>
             </ul>
             <p>Transfers to another participant are not guaranteed but may be considered on a case-by-case basis.</p>
@@ -2085,10 +2177,149 @@
     <p class="section-body reveal" style="text-align:center; margin: 0 auto 3rem;">
       If you're craving solace from the grind, a new way of relating to the everyday, and deep, meaningful connection — this is your invitation. You might even meet your new soul sisters.
     </p>
-    <a href="https://form.jotform.com/260767943027060" class="btn-primary reveal" target="_blank" rel="noopener">
-      Express Your Interest
+    <a href="https://form.jotform.com/261192791769067" class="btn-primary reveal" target="_blank" rel="noopener">
+      Register Now
     </a>
     <p class="cta-note reveal">Spots are limited &nbsp;·&nbsp; Interest form takes 2 minutes</p>
+  </div>
+
+  <!-- MAILCHIMP SIGNUP -->
+  <div id="mailchimp" class="mailchimp-section">
+    <div class="mailchimp-inner reveal">
+      <p class="section-label" style="text-align:center;">Stay in the Know</p>
+      <p class="mailchimp-sub">Not ready to register yet? Join our list and we'll keep you in the loop.</p>
+
+      <style>
+        #mc_embed_shell {
+          width: 100%;
+          max-width: 560px;
+          margin: 0 auto;
+        }
+        #mc_embed_signup {
+          background: rgba(255,255,255,0.03);
+          border: 1px solid rgba(201,168,76,0.25);
+          padding: 3rem 3rem 2rem;
+          font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        #mc_embed_signup h2 {
+          font-family: 'Cinzel', Georgia, serif;
+          font-size: 1.1rem;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          color: #e8c97a;
+          text-align: center;
+          margin: 0 0 0.5rem 0;
+          font-weight: normal;
+        }
+        #mc_embed_signup .indicates-required {
+          font-family: Georgia, serif;
+          font-size: 0.75rem;
+          color: rgba(240,232,216,0.4);
+          text-align: center;
+          margin-bottom: 2rem;
+          letter-spacing: 0.05em;
+        }
+        #mc_embed_signup .asterisk { color: #c9a84c; }
+        #mc_embed_signup .mc-field-group { margin-bottom: 1.2rem; }
+        #mc_embed_signup .mc-field-group label {
+          display: block;
+          font-family: 'Cinzel', Georgia, serif;
+          font-size: 0.65rem;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          color: rgba(240,232,216,0.6);
+          margin-bottom: 0.5rem;
+        }
+        #mc_embed_signup .mc-field-group input {
+          width: 100%;
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(201,168,76,0.25);
+          border-radius: 0;
+          padding: 0.85rem 1rem;
+          font-family: Georgia, serif;
+          font-size: 1rem;
+          color: #f0e8d8;
+          outline: none;
+          transition: border-color 0.2s ease;
+          box-sizing: border-box;
+        }
+        #mc_embed_signup .mc-field-group input:focus {
+          border-color: rgba(201,168,76,0.6);
+          background: rgba(255,255,255,0.07);
+        }
+        #mc_embed_signup .mc-field-group input::placeholder { color: rgba(240,232,216,0.25); }
+        #mc_embed_signup #mc-embedded-subscribe {
+          display: block;
+          width: 100%;
+          background: transparent;
+          border: 1px solid #c9a84c;
+          color: #e8c97a;
+          font-family: 'Cinzel', Georgia, serif;
+          font-size: 0.75rem;
+          letter-spacing: 0.25em;
+          text-transform: uppercase;
+          padding: 1rem 2rem;
+          cursor: pointer;
+          transition: all 0.25s ease;
+          margin-top: 1.8rem;
+          border-radius: 0;
+        }
+        #mc_embed_signup #mc-embedded-subscribe:hover {
+          background: rgba(201,168,76,0.1);
+          box-shadow: 0 4px 18px rgba(201,168,76,0.15);
+        }
+        #mc_embed_signup .optionalParent { margin-top: 1.2rem; }
+        #mc_embed_signup .optionalParent p { text-align: center; }
+        #mc_embed_signup .refferal_badge {
+          opacity: 0.3;
+          filter: brightness(0) invert(1);
+          width: 140px !important;
+          height: auto !important;
+        }
+        #mc_embed_signup #mce-error-response {
+          color: #c9a84c;
+          font-size: 0.85rem;
+          margin-top: 0.5rem;
+          text-align: center;
+        }
+        #mc_embed_signup #mce-success-response {
+          color: #e8c97a;
+          font-size: 0.95rem;
+          font-style: italic;
+          margin-top: 0.5rem;
+          text-align: center;
+        }
+        @media (max-width: 600px) {
+          #mc_embed_signup { padding: 2rem 1.5rem 1.5rem; }
+        }
+      </style>
+
+      <div id="mc_embed_shell">
+        <div id="mc_embed_signup">
+          <form action="https://gmail.us17.list-manage.com/subscribe/post?u=938b30bd30fbc232fdb014a40&amp;id=bcc590bd6e&amp;f_id=0074d4e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
+            <div id="mc_embed_signup_scroll">
+              <h2>Join the Circle</h2>
+              <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+              <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="" placeholder="your@email.com"></div>
+              <div class="mc-field-group"><label for="mce-FNAME">First Name <span class="asterisk">*</span></label><input type="text" name="FNAME" class="required text" id="mce-FNAME" required="" value="" placeholder="Your first name"></div>
+              <div id="mce-responses" class="clear foot">
+                <div class="response" id="mce-error-response" style="display: none;"></div>
+                <div class="response" id="mce-success-response" style="display: none;"></div>
+              </div>
+              <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                <input type="text" name="b_938b30bd30fbc232fdb014a40_bcc590bd6e" tabindex="-1" value="">
+              </div>
+              <div class="optionalParent">
+                <div class="clear foot">
+                  <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Join the Circle">
+                  <p style="margin: 0px auto;"><a href="http://eepurl.com/BtwxIeggsZ" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- FOOTER -->
@@ -2193,6 +2424,23 @@
           btn.setAttribute('aria-expanded', 'true');
         }
       });
+    });
+  </script>
+
+  <!-- BACK TO TOP -->
+  <a href="#" class="back-to-top" aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </a>
+
+  <script>
+    // Back to top visibility
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
     });
   </script>
 
