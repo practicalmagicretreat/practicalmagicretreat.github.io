@@ -796,6 +796,202 @@
       color: var(--gold-dim);
     }
 
+    /* ── WORKSHOPS ── */
+    .workshops-bg {
+      background: linear-gradient(to bottom, #0f0a0a, #1a0f0f, #0f0a0a);
+      padding: 6rem 2rem;
+      border-top: 1px solid rgba(201,168,76,0.2);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      scroll-margin-top: 1rem;
+    }
+    .workshops-inner { max-width: 900px; margin: 0 auto; }
+    .workshops-intro {
+      font-size: 1.05rem;
+      font-style: italic;
+      color: rgba(240,232,216,0.75);
+      max-width: 580px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .workshop-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      margin-top: 3.5rem;
+    }
+    .workshop-card {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 3rem;
+      align-items: start;
+      border: 1px solid rgba(201,168,76,0.2);
+      background: rgba(255,255,255,0.02);
+      padding: 2rem;
+    }
+    .workshop-image-wrap { position: relative; }
+    .workshop-image-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border: 1px solid rgba(201,168,76,0.25);
+      pointer-events: none;
+      z-index: 2;
+    }
+    .workshop-image-wrap img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .workshop-content { display: flex; flex-direction: column; gap: 0.8rem; }
+    .workshop-host-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+    }
+    .workshop-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      color: var(--gold-light);
+      line-height: 1.3;
+      letter-spacing: 0.03em;
+    }
+    .workshop-teaser {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: rgba(240,232,216,0.8);
+      font-style: italic;
+    }
+    .workshop-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      align-self: flex-start;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      padding: 0.3rem 0;
+      margin-top: 0.4rem;
+      transition: color 0.2s ease;
+    }
+    .workshop-toggle:hover, .workshop-toggle:focus-visible { color: var(--gold); }
+    .workshop-icon { width: 14px; height: 14px; transition: transform 0.4s ease; flex-shrink: 0; }
+    .workshop-card.open .workshop-icon { transform: rotate(180deg); }
+    .workshop-full { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+    .workshop-card.open .workshop-full { max-height: 1400px; }
+    .workshop-full p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: rgba(240,232,216,0.75);
+      margin-top: 0.8rem;
+    }
+    @media (max-width: 768px) {
+      .workshops-bg { padding: 4.5rem 1.25rem; }
+      .workshop-card { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; }
+    }
+
+    /* ── RESERVE ── */
+    .reserve-box {
+      scroll-margin-top: 1.5rem;
+      border: 1px solid rgba(201,168,76,0.45);
+      background: rgba(201,168,76,0.04);
+      padding: 3rem 2.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .reserve-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+      color: var(--gold-light);
+      line-height: 1.3;
+    }
+    .reserve-deposit {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .reserve-deposit small {
+      display: block;
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: rgba(240,232,216,0.6);
+      margin-top: 0.5rem;
+    }
+    .reserve-steps {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(240,232,216,0.82);
+      max-width: 520px;
+    }
+    .reserve-box .btn-primary { margin-top: 0.6rem; }
+    .reserve-secure {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: rgba(240,232,216,0.45);
+    }
+    .reserve-questions {
+      margin-top: 0.4rem;
+      padding: 1rem 1.4rem;
+      border-top: 1px solid rgba(201,168,76,0.2);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      font-size: 1.05rem;
+      color: rgba(240,232,216,0.75);
+      max-width: 480px;
+    }
+    .reserve-questions a {
+      color: var(--gold);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .reserve-questions a:hover { color: var(--gold-light); }
+    @media (max-width: 768px) {
+      .reserve-box { padding: 2.2rem 1.4rem; }
+    }
+
+    /* Tighter desktop nav once Workshops is added */
+    @media (min-width: 769px) and (max-width: 1150px) {
+      .nav-links { gap: 1.4rem; }
+      .nav-links a { letter-spacing: 0.15em; }
+    }
+
+    /* ── ADD-ONS ── */
+    .addon-box {
+      margin-top: 2rem;
+      border: 1px solid rgba(201,168,76,0.35);
+      background: rgba(201,168,76,0.04);
+      padding: 2rem 2.2rem;
+    }
+    .addon-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .addon-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      color: var(--gold-light);
+      margin-bottom: 0.8rem;
+    }
+    @media (max-width: 768px) {
+      .addon-box { padding: 1.6rem 1.4rem; }
+    }
+
     /* ── PRICING ── */
     .pricing-bg {
       background: linear-gradient(to bottom, var(--black), var(--deep), var(--black));
@@ -1500,7 +1696,7 @@
 
   <!-- ANNOUNCEMENT BAR -->
   <div class="announce-bar">
-    <p>Only a few spots remain — there's still a place for you around the fire. <a href="https://form.jotform.com/261192791769067" target="_blank" rel="noopener">Register Now →</a></p>
+    <p>Only a few spots remain — there's still a place for you around the fire. <a href="#reserve">Register Now →</a></p>
   </div>
 
   <!-- NAV -->
@@ -1508,12 +1704,13 @@
     <div class="nav-inner">
       <ul class="nav-links" role="list">
         <li><a href="#experience">The Experience</a></li>
+        <li><a href="#workshops">Workshops</a></li>
         <li><a href="#hosts">Your Hosts</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#accommodations">Accommodations</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#mailchimp">Join our list</a></li>
-        <li><a href="https://form.jotform.com/261192791769067" class="nav-cta" target="_blank" rel="noopener">Register Now</a></li>
+        <li><a href="#reserve" class="nav-cta">Register Now</a></li>
       </ul>
       <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -1521,12 +1718,13 @@
     </div>
     <div class="nav-mobile" role="menu">
       <a href="#experience" role="menuitem">The Experience</a>
+      <a href="#workshops" role="menuitem">Workshops</a>
       <a href="#hosts" role="menuitem">Your Hosts</a>
       <a href="#pricing" role="menuitem">Pricing</a>
       <a href="#accommodations" role="menuitem">Accommodations</a>
       <a href="#faq" role="menuitem">FAQ</a>
       <a href="#mailchimp" role="menuitem">Join our list</a>
-      <a href="https://form.jotform.com/261192791769067" class="nav-cta" target="_blank" rel="noopener" role="menuitem">Register Now</a>
+      <a href="#reserve" class="nav-cta" role="menuitem">Register Now</a>
     </div>
   </nav>
 
@@ -1616,7 +1814,7 @@
       <div class="line"></div>
     </div>
 
-    <a href="https://form.jotform.com/261192791769067" class="btn-primary" target="_blank" rel="noopener">
+    <a href="#reserve" class="btn-primary">
       Register Now
     </a>
     <a href="#mailchimp" class="btn-secondary-hero">Join our list</a>
@@ -1744,6 +1942,69 @@
     </div>
   </div>
 
+  <!-- WORKSHOPS -->
+  <div id="workshops" class="workshops-bg">
+    <div class="workshops-inner">
+      <div class="reveal" style="text-align:center;">
+        <span class="section-label">Featured Workshops</span>
+        <h2 class="section-title">Three ways in.</h2>
+        <p class="workshops-intro">Each of your guides is bringing something close to her heart. Here's what you'll experience together.</p>
+      </div>
+      <div class="workshop-list">
+        <div class="workshop-card reveal">
+          <div class="workshop-image-wrap">
+            <img src="Workshop_Rachel.png" alt="Take Up Space Sis workshop graphic" loading="lazy" />
+          </div>
+          <div class="workshop-content">
+            <p class="workshop-host-label">with Rachel Blum</p>
+            <h3 class="workshop-title">Take Up Space Sis</h3>
+            <p class="workshop-teaser">Consciously or not, most of us have been making ourselves smaller for a long time. This workshop moves through the whole spectrum — stillness, movement, dance, sound — until we land somewhere that feels like you, but more so.</p>
+            <button class="workshop-toggle" aria-expanded="false" aria-controls="ws-1"><span>Read more</span><svg class="workshop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="workshop-full" id="ws-1">
+              <p>Consciously or not, most of us have been making ourselves smaller for a long time. In rooms, in conversations, in our own bodies, quietly editing ourselves down to a more acceptable size. This workshop is for all of that.</p>
+              <p>We’ll start with stillness and move through the whole spectrum — meditation, gentle movement, a little dancing, maybe some sounds you didn’t know you had in you — until we land somewhere that feels like you, but more so. We close by going around the circle and speaking a dream out loud, because when you give a dream a voice, you give it form. And that’s not woo. That’s physics.</p>
+              <p>Come ready to move. Come ready to be surprised by yourself.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="workshop-card reveal">
+          <div class="workshop-image-wrap">
+            <img src="Workshop_Rebekah.png" alt="Enough workshop graphic" loading="lazy" />
+          </div>
+          <div class="workshop-content">
+            <p class="workshop-host-label">with Rebekah Baldwin</p>
+            <h3 class="workshop-title">Enough: How to Feel Rich in Time, Money, and What Matters Most</h3>
+            <p class="workshop-teaser">What if abundance isn’t about getting more? We’ll examine the stories we’ve inherited around scarcity, explore the nervous system’s role, and try practical tools for living in deeper alignment with what matters most.</p>
+            <button class="workshop-toggle" aria-expanded="false" aria-controls="ws-2"><span>Read more</span><svg class="workshop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="workshop-full" id="ws-2">
+              <p>Most of us think scarcity is a problem we can out earn. We’ve been taught to measure wealth by accumulation: more money, more achievement, more experiences, more productivity. More, more, more. Yet many of us live with a persistent feeling that there is never enough — never enough money, never enough time, never enough energy, never enough of ourselves to go around.</p>
+              <p>But what if abundance isn’t about getting more? What if it’s about becoming more capable of recognizing, receiving, and enjoying what is already here?</p>
+              <p>In this workshop, we’ll examine the cultural stories we have inherited around success and enoughness, learn about the nervous system’s role in experiencing scarcity or abundance, and try out some practical tools that ensure you are spending your valuable resources in ways that support what matters most.</p>
+              <p>This isn’t about bypassing or denying our current lived reality. It’s about creating more spaciousness in our day-to-day, cultivating the capacity to recognize the abundance that’s already there, and designing a life that is in deeper alignment with our values.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="workshop-card reveal">
+          <div class="workshop-image-wrap">
+            <img src="Workshop_Ashley.png" alt="Archetypal Embodiment workshop graphic" loading="lazy" />
+          </div>
+          <div class="workshop-content">
+            <p class="workshop-host-label">with Ashley Clara</p>
+            <h3 class="workshop-title">Archetypal Embodiment: The Art of Shapeshifting</h3>
+            <p class="workshop-teaser">What if the parts of yourself you’ve been searching for are waiting within you? Through movement, imagination, and play, you’ll explore how shifting your body and expression can reveal new facets of yourself.</p>
+            <button class="workshop-toggle" aria-expanded="false" aria-controls="ws-3"><span>Read more</span><svg class="workshop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+            <div class="workshop-full" id="ws-3">
+              <p>What if the parts of yourself you’ve been searching for are not somewhere outside of you, but waiting within you to be awakened, explored, and embodied?</p>
+              <p>This workshop introduces archetypes as living forces that shape how we think, feel, move, create, and relate to the world. Through movement, imagination, symbolism, guided exploration, expression, and play, you’ll experience how shifting your body, perspective, and expression can reveal new facets of yourself. Part teaching, part experience, this workshop offers a practical introduction to archetypal embodiment and the art of conscious shapeshifting.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- PRICING -->
   <div id="pricing" class="pricing-bg">
     <div class="pricing-inner">
@@ -1793,11 +2054,14 @@
         <p class="pricing-fine">If you and 2 friends want to share a king or queen room, that can be arranged for an additional surcharge. Additional mattresses or sleeping mats will not be provided, but you may bring your own.</p>
       </div>
 
-      <div class="pricing-cta-wrap reveal">
-        <a href="https://form.jotform.com/261192791769067" class="btn-primary" target="_blank" rel="noopener" style="opacity:1; animation:none;">Register Now</a>
-        <p class="pricing-contact">
-          <a href="mailto:practicalmagicretreat@gmail.com">Reach out via email</a> with questions or schedule a <a href="https://calendar.app.google/bYnRAG7tAuKbhADXA" target="_blank" rel="noopener">free exploration call</a>.
-        </p>
+      <div id="reserve" class="reserve-box reveal">
+        <span class="section-label" style="margin-bottom:0;">Reserve Your Spot</span>
+        <h3 class="reserve-title">There's still a place for you around the fire.</h3>
+        <p class="reserve-deposit">$250 deposit<small>Non-refundable · applied to your total</small></p>
+        <p class="reserve-steps">Your deposit holds your spot. Choose your room preference at checkout, and within 24 hours we'll email your remaining balance and next steps.</p>
+        <p class="reserve-questions">Still have questions? <a href="https://calendar.app.google/bYnRAG7tAuKbhADXA" target="_blank" rel="noopener">Book a call today</a> with one of the magical humans behind the retreat!</p>
+        <a href="https://book.stripe.com/6oU28teFu9gJ3GV2OVcAo00" class="btn-primary" style="opacity:1; animation:none;">Reserve My Spot</a>
+        <p class="reserve-secure">Secure checkout through Stripe.</p>
       </div>
     </div>
   </div>
@@ -1934,6 +2198,13 @@
           <p class="host-bio">Her work centers on archetypal embodiment as a lived practice inspiring participants to move beyond overthinking and into the body, where confidence, creativity, and self-trust can naturally emerge and be expressed.</p>
         </div>
       </div>
+
+      <div class="addon-box reveal">
+        <p class="addon-label">Optional Add-On</p>
+        <h3 class="addon-title">Embodiment Photoshoot Sessions</h3>
+        <p class="host-bio">For those wishing to explore further, Ashley will be offering one-on-one Embodiment Photoshoot Sessions. Combining archetypal exploration, creative direction, styling, movement, and photography, these immersive sessions are designed to help bring hidden, emerging, or desired aspects of yourself into expression. This isn’t just a photoshoot, it’s a transformational experience and exploration of expression, creating powerful visual reflections that serve as mirrors of the soul.</p>
+        <p class="host-bio" style="margin-top:0.8rem; font-style:italic; opacity:0.75;">Pricing and booking details will be shared on site at the retreat.</p>
+      </div>
     </div>
   </div>
 
@@ -2013,7 +2284,7 @@
             <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
           </button>
           <div class="faq-answer">
-            <p>Yes. Your retreat payment includes both lodging and meals for the weekend. The total investment depends on the accommodation option you select and whether you register during the early bird pricing period.</p>
+            <p>Yes. Your retreat payment includes both lodging and meals for the weekend. The total investment depends on the accommodation option you select.</p>
             <p>Meals provided include:</p>
             <ul>
               <li>Friday dinner</li>
@@ -2124,15 +2395,12 @@
             <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
           </button>
           <div class="faq-answer">
-            <p>To secure your place at the retreat, a 40% deposit of your total retreat balance is due at the time of registration.</p>
+            <p>A $250 non-refundable deposit secures your spot and is applied to your total. After you book, we'll email your remaining balance and next steps within 24 hours.</p>
             <ul>
-              <li>The remaining balance is due no later than September 18, 2026 (8 weeks prior to retreat start).</li>
+              <li>The remaining balance is due no later than October 23, 2026 (3 weeks prior to retreat start).</li>
+              <li>If you register after October 23, 2026, your full balance is due at the time of registration.</li>
             </ul>
-            <p>Because retreat planning requires us to make commitments well in advance, the following cancellation terms apply:</p>
-            <ul>
-              <li>Cancellations made before September 1, 2026 are eligible for a refund of all payments made minus a $100.</li>
-              <li>Cancellations made on or after September 1, 2026 are non-refundable.</li>
-            </ul>
+            <p>Because retreat planning requires us to make commitments well in advance, all deposits and payments are non-refundable. In the unlikely event we must cancel the retreat, all payments will be refunded in full.</p>
             <p>Transfers to another participant are not guaranteed but may be considered on a case-by-case basis.</p>
             <p>Review our full Payments &amp; Refund policies <a href="https://drive.google.com/file/d/1pyojRvCqW8N0Yk_1Dx7Xerzh0hEGGcWj/view?usp=drivesdk" target="_blank" rel="noopener">HERE</a>.</p>
           </div>
@@ -2164,7 +2432,7 @@
     <p class="section-body reveal" style="text-align:center; margin: 0 auto 3rem;">
       If you're craving solace from the grind, a new way of relating to the everyday, and deep, meaningful connection — this is your invitation. You might even meet your new soul sisters.
     </p>
-    <a href="https://form.jotform.com/261192791769067" class="btn-primary reveal" target="_blank" rel="noopener">
+    <a href="#reserve" class="btn-primary reveal">
       Register Now
     </a>
   </div>
@@ -2428,6 +2696,19 @@
       } else {
         backToTop.classList.remove('visible');
       }
+    });
+  </script>
+
+  <script>
+    // Workshop "Read more" toggles
+    document.querySelectorAll('.workshop-card').forEach(card => {
+      const toggle = card.querySelector('.workshop-toggle');
+      const label = toggle.querySelector('span');
+      toggle.addEventListener('click', () => {
+        const open = card.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+        label.textContent = open ? 'Read less' : 'Read more';
+      });
     });
   </script>
 
