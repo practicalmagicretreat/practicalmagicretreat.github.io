@@ -2059,6 +2059,7 @@
         <h3 class="reserve-title">There's still a place for you around the fire.</h3>
         <p class="reserve-deposit">$250 deposit<small>Non-refundable · applied to your total</small></p>
         <p class="reserve-steps">Your deposit holds your spot. Choose your room preference at checkout, and within 24 hours we'll email your remaining balance and next steps.</p>
+        <p class="reserve-secure" style="font-size:0.95rem;">Want extra peace of mind? <a href="#faq-insurance" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px;">Learn about travel insurance</a> for your booking.</p>
         <p class="reserve-questions">Still have questions? <a href="https://calendar.app.google/bYnRAG7tAuKbhADXA" target="_blank" rel="noopener">Book a call today</a> with one of the magical humans behind the retreat!</p>
         <a href="https://book.stripe.com/6oU28teFu9gJ3GV2OVcAo00" class="btn-primary" style="opacity:1; animation:none;">Reserve My Spot</a>
         <p class="reserve-secure">Secure checkout through Stripe.</p>
@@ -2406,6 +2407,22 @@
           </div>
         </div>
 
+        <div class="faq-item" id="faq-insurance">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I protect my booking with travel insurance?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, and we encourage it! Sites like <a href="https://www.squaremouth.com" target="_blank" rel="noopener">Squaremouth</a> let you compare quotes from many providers; costs typically run about $20–100.</p>
+            <p>A few tips:</p>
+            <ul>
+              <li>Buy soon after your deposit. "Cancel For Any Reason" and pre-existing condition coverage are usually only available within 14–21 days of your first payment.</li>
+              <li>Many plans require you to travel 50–100+ miles from home, so check the details.</li>
+            </ul>
+            <p>We're not affiliated with Squaremouth or any insurer.</p>
+          </div>
+        </div>
+
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>How do I contact you for more information?</span>
@@ -2700,6 +2717,14 @@
   </script>
 
   <script>
+    // Open the travel insurance FAQ when linked from the Reserve section
+    document.querySelectorAll('a[href="#faq-insurance"]').forEach(a => {
+      a.addEventListener('click', () => {
+        const item = document.getElementById('faq-insurance');
+        if (item && !item.classList.contains('open')) item.querySelector('.faq-question').click();
+      });
+    });
+
     // Workshop "Read more" toggles
     document.querySelectorAll('.workshop-card').forEach(card => {
       const toggle = card.querySelector('.workshop-toggle');
