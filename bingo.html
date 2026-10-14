@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practical Magic Bingo — Free Download</title>
+  <meta name="description" content="Twenty-four small spells for ordinary days. A free bingo card from Practical Magic Retreat." />
+  <meta property="og:title" content="Practical Magic Bingo — small spells for ordinary days" />
+  <meta property="og:description" content="A free bingo card from Practical Magic Retreat. How many can you check off before November 13?" />
+  <meta property="og:image" content="https://practicalmagicretreat.com/bingo-preview.jpg" />
+  <meta property="og:url" content="https://practicalmagicretreat.com/bingo" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #12102a; --deep: #1a1735; --gold: #c9a84c; --gold-light: #e8c97a;
+      --gold-dim: #7a6130; --cream: #f0e8d8;
+    }
+    body {
+      background:
+        radial-gradient(ellipse 80% 40% at 50% 0%, rgba(90,60,160,0.3) 0%, transparent 70%),
+        radial-gradient(ellipse 70% 35% at 50% 100%, rgba(60,50,130,0.2) 0%, transparent 70%),
+        var(--black);
+      color: var(--cream);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 18px; line-height: 1.7; min-height: 100vh;
+    }
+    .wrap { max-width: 1020px; margin: 0 auto; padding: 4rem 1.5rem 3rem; }
+    .grid { display: grid; grid-template-columns: 1fr 420px; gap: 3.5rem; align-items: center; }
+
+    .eyebrow {
+      font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.38em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+    }
+    h1 {
+      font-family: 'Cinzel Decorative', serif; font-weight: 700;
+      font-size: clamp(2.2rem, 5.5vw, 3.4rem); line-height: 1.08; color: var(--gold-light); margin-bottom: 0.6rem;
+    }
+    .sub { font-style: italic; font-size: clamp(1.15rem, 2.4vw, 1.4rem); margin-bottom: 1.4rem; }
+    .copy p { color: rgba(240,232,216,0.86); margin-bottom: 1rem; max-width: 520px; }
+    .copy ul { list-style: none; margin: 1.2rem 0 0; display: grid; gap: 0.35rem; }
+    .copy li { font-style: italic; color: rgba(240,232,216,0.86); }
+    .copy li::before { content: '✦'; color: var(--gold); font-style: normal; font-size: 0.8rem; margin-right: 0.6rem; }
+
+    .preview { position: relative; margin-top: 2rem; max-width: 300px; transform: rotate(-2deg); }
+    .preview::before { content: ''; position: absolute; inset: -1px; border: 1px solid rgba(201,168,76,0.35); pointer-events: none; }
+    .preview img { display: block; width: 100%; height: auto; }
+
+    /* Mailchimp form, matched to the main site */
+    #mc_embed_signup {
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(201,168,76,0.3);
+      padding: 2.6rem 2.4rem 2rem;
+    }
+    #mc_embed_signup h2 {
+      font-family: 'Cinzel', serif; font-weight: 500; font-size: 1.05rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold-light); text-align: center; margin-bottom: 0.4rem;
+    }
+    #mc_embed_signup .form-note { text-align: center; font-style: italic; font-size: 0.98rem; color: rgba(240,232,216,0.65); margin-bottom: 1.8rem; }
+    #mc_embed_signup .mc-field-group { margin-bottom: 1.2rem; }
+    #mc_embed_signup label {
+      display: block; font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(240,232,216,0.65); margin-bottom: 0.5rem;
+    }
+    #mc_embed_signup input[type="email"], #mc_embed_signup input[type="text"] {
+      width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.3); border-radius: 0;
+      padding: 0.85rem 1rem; font-family: 'EB Garamond', Georgia, serif; font-size: 1.05rem; color: var(--cream); outline: none;
+    }
+    #mc_embed_signup input:focus { border-color: rgba(201,168,76,0.7); background: rgba(255,255,255,0.07); }
+    #mc_embed_signup input::placeholder { color: rgba(240,232,216,0.3); }
+    #mc-embedded-subscribe {
+      display: block; width: 100%; margin-top: 1.6rem; cursor: pointer; border: none; border-radius: 0;
+      font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--black); background: linear-gradient(135deg, var(--gold-light), var(--gold)); padding: 1.05rem 1.5rem;
+      transition: all 0.25s ease;
+    }
+    #mc-embedded-subscribe:hover { background: linear-gradient(135deg, #f0d98a, var(--gold-light)); box-shadow: 0 8px 26px rgba(201,168,76,0.25); }
+    .privacy { text-align: center; font-size: 0.88rem; font-style: italic; color: rgba(240,232,216,0.5); margin-top: 1rem; }
+
+    .retreat-line { text-align: center; margin-top: 4rem; color: rgba(240,232,216,0.7); font-style: italic; }
+    .retreat-line a { color: var(--gold-light); }
+    footer { text-align: center; margin-top: 3rem; padding-top: 1.8rem; border-top: 1px solid rgba(201,168,76,0.15); }
+    footer p { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(240,232,216,0.4); }
+    footer a { color: var(--gold-dim); text-decoration: none; }
+
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .copy { text-align: center; }
+      .copy p, .preview { margin-left: auto; margin-right: auto; }
+      .copy ul { justify-items: center; }
+      .preview { max-width: 240px; }
+      #mc_embed_signup { padding: 2rem 1.4rem 1.6rem; }
+      .copy .more { display: none; }
+      .wrap { padding-top: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="grid">
+
+      <div class="copy">
+        <p class="eyebrow">A free download from Practical Magic Retreat</p>
+        <h1>Practical Magic Bingo</h1>
+        <p class="sub">small spells for ordinary days</p>
+        <p>Magic doesn't have to be grand. Sometimes it's a gold spoon in a glass jar, a song you dance to in the kitchen, or a dream you finally say out loud.</p>
+        <p class="more">This card holds 24 of those little spells, with notes on how to cast each one. Pick a reward, then see how many you can check off before November 13.</p>
+        <ul class="more">
+          <li>Romanticize an errand</li>
+          <li>Release something to a flame</li>
+          <li>Leave a little magic for a stranger</li>
+        </ul>
+        <div class="preview more"><img src="bingo-preview.jpg" alt="Preview of the Practical Magic Bingo card" width="900" height="1165" /></div>
+      </div>
+
+      <div id="mc_embed_signup">
+        <!-- Same Mailchimp audience as the main site form. Only the tag differs (see the hidden "tags" field below). -->
+        <form action="https://gmail.us17.list-manage.com/subscribe/post?u=938b30bd30fbc232fdb014a40&amp;id=bcc590bd6e&amp;f_id=0074d4e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
+          <h2>Get your card</h2>
+          <p class="form-note">We'll send you straight to the download.</p>
+          <div class="mc-field-group">
+            <label for="mce-EMAIL">Email address</label>
+            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="" placeholder="your@email.com" />
+          </div>
+          <div class="mc-field-group">
+            <label for="mce-FNAME">First name</label>
+            <input type="text" name="FNAME" class="required text" id="mce-FNAME" required="" value="" placeholder="Your first name" />
+          </div>
+          <!-- Mailchimp tag: Bingo Download -->
+          <div hidden=""><input type="hidden" name="tags" value="6318095" /></div>
+          <div aria-hidden="true" style="position: absolute; left: -5000px;">
+            <input type="text" name="b_938b30bd30fbc232fdb014a40_bcc590bd6e" tabindex="-1" value="" />
+          </div>
+          <input type="submit" name="subscribe" id="mc-embedded-subscribe" value="Send me the card" />
+          <p class="privacy">You'll also join our list for retreat news. Unsubscribe anytime.</p>
+        </form>
+      </div>
+
+    </div>
+
+    <p class="retreat-line">Curious about the retreat itself? <a href="https://practicalmagicretreat.com">Come take a look</a>.</p>
+
+    <footer>
+      <p><a href="https://practicalmagicretreat.com">practicalmagicretreat.com</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/practicalmagic_retreat" target="_blank" rel="noopener">@practicalmagic_retreat</a></p>
+    </footer>
+  </main>
+</body>
+</html>
