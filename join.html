@@ -195,10 +195,13 @@
 
     .sub {
       font-family: 'Cinzel', serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      line-height: 1.8;
       text-transform: uppercase;
-      color: var(--sage);
+      color: var(--cream);
+      text-shadow: 0 1px 12px rgba(18,16,42,0.9);
       margin-bottom: 1.8rem;
     }
 
@@ -404,15 +407,21 @@
       display: inline-block;
       margin-top: 2.2rem;
       font-family: 'Cinzel', serif;
-      font-size: 0.68rem;
-      letter-spacing: 0.25em;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      line-height: 1.8;
       text-transform: uppercase;
-      color: var(--gold-dim);
+      color: var(--gold-light);
       text-decoration: none;
-      border-bottom: 1px solid rgba(201,168,76,0.3);
+      border-bottom: 1px solid rgba(232,201,122,0.6);
       padding-bottom: 2px;
     }
-    .more-link:hover { color: var(--gold); }
+    .more-link:hover { color: #fff; border-color: rgba(255,255,255,0.7); }
+    .info-link-wrap { text-align: center; margin-top: 2.2rem; }
+    .info-link-wrap .more-link { margin-top: 0; }
+    .sparkle-list a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; }
+    .sparkle-list a:hover { color: #fff; }
 
     footer {
       border-top: 1px solid rgba(201,168,76,0.15);
@@ -509,13 +518,14 @@
         <h2 class="h2">Part ritual. Part real life.<br/>All magic.</h2>
       </div>
       <ul class="sparkle-list">
-        <li><span><strong>Three workshops</strong>: Take Up Space Sis, Dream Mapping, and Archetypal Embodiment</span></li>
+        <li><span><a href="/#workshops"><strong>Three workshops</strong></a>: Take Up Space Sis, Dream Mapping, and Archetypal Embodiment</span></li>
         <li><span><strong>Practical tools</strong> you'll actually take home, like dream activation &amp; nervous system regulation</span></li>
         <li><span><strong>Comfort food all weekend</strong>, Friday dinner through Sunday breakfast</span></li>
         <li><span><strong>Hot tub, barrel sauna, fire pit</strong> &amp; the Etowah River right out back</span></li>
         <li><span><strong>Belly laughs &amp; pajama parties</strong>, because joy is its own kind of magic</span></li>
         <li><span><strong>Room to rest.</strong> Every activity is optional. No retreat experience needed.</span></li>
       </ul>
+      <p class="info-link-wrap"><a href="/#workshops" class="more-link">More info on workshops &amp; accommodations →</a></p>
     </section>
 
     <!-- PHOTOS -->
