@@ -20,6 +20,23 @@
   <meta name="twitter:title" content="Practical Magic Retreat — November 2026" />
   <meta name="twitter:description" content="A weekend retreat for women who believe in magic and making things happen. North Georgia Mountains, November 13–15, 2026." />
   <meta name="twitter:image" content="https://practicalmagicretreat.com/IMG_3701.jpg" />
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1489879286322094');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt=""
+  src="https://www.facebook.com/tr?id=1489879286322094&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel Code -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
@@ -2729,6 +2746,16 @@
         const open = card.classList.toggle('open');
         toggle.setAttribute('aria-expanded', open);
         label.textContent = open ? 'Read less' : 'Read more';
+      });
+    });
+  </script>
+
+  <script>
+    // Meta Pixel: Reserve (Stripe) clicks = InitiateCheckout, call-booking clicks = Schedule
+    document.querySelectorAll('a[href*="book.stripe.com"], a[href*="calendar.app.google"]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        if (typeof fbq !== 'function') return;
+        fbq('track', a.href.indexOf('book.stripe.com') > -1 ? 'InitiateCheckout' : 'Schedule');
       });
     });
   </script>
