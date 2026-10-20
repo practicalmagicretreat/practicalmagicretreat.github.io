@@ -913,6 +913,16 @@
       .workshop-card { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; }
     }
 
+    /* ── HOST VIDEO (above Reserve) ── */
+    .invite-video { text-align: center; margin: 0 auto 3rem; max-width: 360px; }
+    .invite-video video {
+      display: block; width: 100%; height: auto; aspect-ratio: 9 / 16;
+      background: var(--deep); border: 1px solid rgba(201,168,76,0.3);
+    }
+    .invite-video p {
+      font-style: italic; font-size: 1rem; color: rgba(240,232,216,0.7); margin-top: 0.9rem;
+    }
+
     /* ── RESERVE ── */
     .reserve-box {
       scroll-margin-top: 1.5rem;
@@ -2065,6 +2075,12 @@
           </tbody>
         </table>
         <p class="pricing-fine">If you and 2 friends want to share a king or queen room, that can be arranged for an additional surcharge. Additional mattresses or sleeping mats will not be provided, but you may bring your own.</p>
+      </div>
+
+      <!-- HOST VIDEO: a personal invite right before Reserve -->
+      <div class="invite-video reveal">
+        <span class="section-label">A Note From Your Hosts</span>
+        <video src="join-video.mp4" poster="join-video-poster.jpg" controls playsinline preload="metadata"></video>
       </div>
 
       <div id="reserve" class="reserve-box reveal">
