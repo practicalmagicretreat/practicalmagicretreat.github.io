@@ -29,7 +29,7 @@
     var key = 'pm_purchase_' + sid, already = false;
     try { already = localStorage.getItem(key) === '1'; } catch (e) {}
     if (already) return;
-    fbq('track', 'Purchase', { value: 250.00, currency: 'USD', content_name: 'Retreat deposit' }, { eventID: sid });
+    fbq('track', 'Purchase', { value: 497.00, currency: 'USD', content_name: 'Retreat programming fee' }, { eventID: sid });
     try { localStorage.setItem(key, '1'); } catch (e) {}
   })();
   </script>
@@ -124,7 +124,7 @@
 
     <p class="eyebrow">Practical Magic Retreat · November 13–15</p>
     <h1>You're in, darling.</h1>
-    <p class="lede">Your deposit is in and your spot by the fire is saved. We're so happy you said yes to yourself.</p>
+    <p class="lede">Your programming fee is in and your spot by the fire is saved. We're so happy you said yes to yourself.</p>
 
     <div class="stars" aria-hidden="true"><div class="line"></div><span>✦ ✦ ✦</span><div class="line"></div></div>
 
@@ -139,7 +139,7 @@
     <section class="next" aria-labelledby="next-title">
       <h3 id="next-title">What happens next</h3>
       <ul>
-        <li><span>Within 24 hours, we'll email your remaining balance and next steps.</span></li>
+        <li><span>Within 24 hours, we'll email your final invoice for your room. It's due within 24 hours of receiving it.</span></li>
         <li><span>Closer to the retreat, you'll get the full address, arrival details, and a packing list.</span></li>
         <li><span>Questions anytime? Just email us at <a href="mailto:practicalmagicretreat@gmail.com">practicalmagicretreat@gmail.com</a>.</span></li>
       </ul>
