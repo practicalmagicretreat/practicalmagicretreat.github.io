@@ -1196,6 +1196,14 @@
     }
 
     .pricing-table tbody tr:last-child td { border-bottom: none; }
+    .pricing-table tr.booked td { color: rgba(240,232,216,0.32); }
+    .pricing-table .booked-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.6);
+    }
 
     .pricing-table td:not(:first-child) {
       font-family: 'Cinzel', serif;
@@ -2050,7 +2058,7 @@
       </div>
 
       <div class="pricing-lodging-wrap reveal">
-        <p class="pricing-lodging-heading">Lodging <span>(select one)</span></p>
+        <p class="pricing-lodging-heading">Lodging</p>
         <table class="pricing-table">
           <thead>
             <tr>
@@ -2060,20 +2068,20 @@
           </thead>
           <tbody>
             <tr>
-              <td>Private room — solo</td>
-              <td>$800</td>
-            </tr>
-            <tr>
-              <td>Private room — shared <em>($400 per person when shared with a friend. Both guests must register individually.)</em></td>
-              <td>$400 <em>per person</em></td>
-            </tr>
-            <tr>
-              <td>Bunk room — shared <em>(hosts assign rooms)</em></td>
+              <td>Bunk room — shared <em>(hosts assign beds)</em></td>
               <td>$350</td>
+            </tr>
+            <tr class="booked">
+              <td>Private room — solo</td>
+              <td><span class="booked-tag">Fully booked</span></td>
+            </tr>
+            <tr class="booked">
+              <td>Private room — shared</td>
+              <td><span class="booked-tag">Fully booked</span></td>
             </tr>
           </tbody>
         </table>
-        <p class="pricing-fine">If you and 2 friends want to share a king or queen room, that can be arranged for an additional surcharge. Additional mattresses or sleeping mats will not be provided, but you may bring your own.</p>
+        <p class="pricing-fine">Our private rooms are fully booked, so all remaining spots are in the shared bunk room. Your all-in total is $847 ($497 programming + $350 lodging), paid in full at registration.</p>
       </div>
 
       <!-- HOST VIDEO: a personal invite right before Reserve -->
@@ -2085,12 +2093,12 @@
       <div id="reserve" class="reserve-box reveal">
         <span class="section-label" style="margin-bottom:0;">Reserve Your Spot</span>
         <h3 class="reserve-title">There's still a place for you around the fire.</h3>
-        <p class="reserve-deposit">$497 to reserve<small>Retreat programming fee · non-refundable</small></p>
-        <p class="reserve-steps">Your programming fee includes all workshops, facilitated experiences &amp; meals, and holds your spot. Choose your room preference at checkout. Within 24 hours, we'll email your final invoice for your room, due within 24 hours of receiving it.</p>
+        <p class="reserve-deposit">$847 all-inclusive<small>Shared bunk room · paid in full at registration</small></p>
+        <p class="reserve-steps">Includes all workshops, facilitated experiences, meals &amp; your bed in our shared bunk room for both nights. Prefer to split it up? Choose Klarna at checkout to pay over time (subject to approval).</p>
         <p class="reserve-secure" style="font-size:0.95rem;">Want extra peace of mind? <a href="#faq-insurance" style="color:var(--gold); text-decoration:underline; text-underline-offset:3px;">Learn about travel insurance</a> for your booking.</p>
-        <p class="reserve-questions">Still have questions? <a href="https://calendar.app.google/bYnRAG7tAuKbhADXA" target="_blank" rel="noopener">Book a call today</a> with one of the magical humans behind the retreat!</p>
-        <a href="https://book.stripe.com/4gMbJ32WM3WpgtH2OVcAo04" class="btn-primary" style="opacity:1; animation:none;">Reserve My Spot</a>
-        <p class="reserve-secure">Secure checkout through Stripe.</p>
+        <p class="reserve-questions">Still have questions? <a href="https://calendar.app.google/bYnRAG7tAuKbhADXA" target="_blank" rel="noopener">Book a free, no-pressure call</a> with one of the magical humans behind the retreat!</p>
+        <a href="https://book.stripe.com/aFa7sNdBq3Wp1yNfBHcAo05" class="btn-primary" style="opacity:1; animation:none;">Reserve My Spot</a>
+        <p class="reserve-secure">Secure checkout through Stripe. All payments are non-refundable.</p>
       </div>
     </div>
   </div>
@@ -2104,7 +2112,7 @@
 
     <div class="accom-desc reveal">
       <p class="section-body">Our retreat will take place at a beautiful private riverside cabin just outside Dahlonega, set on 7.5 wooded acres along the Etowah River. The spacious home is designed for gathering and relaxation, with expansive porches overlooking the woods and water, cozy indoor living spaces, and amenities like a hot tub, barrel sauna, fire pit, and riverfront seating areas perfect for reflection or connection.</p>
-      <p class="section-body">The house includes a variety of bedroom layouts to support different comfort levels: bunk rooms for those choosing the shared accommodation option, as well as queen and king bedrooms that may be reserved either privately or shared with another guest.</p>
+      <p class="section-body">The house includes a variety of bedroom layouts to support different comfort levels: bunk rooms for those choosing the shared accommodation option, as well as queen and king bedrooms. Our private rooms are now fully booked, so all remaining spots are in the shared bunk room.</p>
     </div>
 
     <!-- Full-width hero image -->
@@ -2331,7 +2339,7 @@
             <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
           </button>
           <div class="faq-answer">
-            <p>The retreat home offers a mix of shared bunk-style rooms as well as queen and king bedrooms that can be reserved privately or shared with another guest. All bathrooms in the home are shared among retreat participants. We ask everyone to be mindful of shared spaces and to help create a respectful and supportive communal environment throughout the weekend.</p>
+            <p>The retreat home offers a mix of shared bunk-style rooms as well as queen and king bedrooms. Our private rooms are now fully booked, so all remaining spots are in the shared bunk room. All bathrooms in the home are shared among retreat participants. We ask everyone to be mindful of shared spaces and to help create a respectful and supportive communal environment throughout the weekend.</p>
           </div>
         </div>
 
@@ -2341,7 +2349,7 @@
             <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
           </button>
           <div class="faq-answer">
-            <p>Yes! If you'd like to attend with a friend, partner, or family member, you can book a private room to share together. The shared private room rate is $400 per person — both guests must register individually and each pay the $497 retreat programming fee.</p>
+            <p>Yes! Our private rooms are now fully booked, but you're welcome to come with a friend, partner, or family member. Each guest registers individually, and just let us know you're coming together so we can keep you close in the bunk room.</p>
           </div>
         </div>
 
@@ -2351,7 +2359,7 @@
             <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
           </button>
           <div class="faq-answer">
-            <p>Yes. Private room options are available and can be selected during registration.</p>
+            <p>Our private rooms are now fully booked. All remaining spots are in the shared bunk room.</p>
           </div>
         </div>
 
@@ -2424,7 +2432,7 @@
             <svg class="faq-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l1.5 4.5H18l-3.75 2.75 1.5 4.5L12 11l-3.75 2.75 1.5-4.5L6 6.5h4.5z"/><circle cx="12" cy="18" r="1.5"/><path d="M9 15.5l3 2 3-2"/></svg>
           </button>
           <div class="faq-answer">
-            <p>The $497 retreat programming fee is paid at registration and secures your spot. Within 24 hours, we'll email your final invoice for your room, which is due within 24 hours of receiving it.</p>
+            <p>Registration is paid in full at checkout ($847), which secures your spot. Want to split it into smaller payments? Choose Klarna at checkout to pay over time (subject to Klarna's approval).</p>
             <p>Because retreat planning requires us to make commitments well in advance, all payments are non-refundable. In the unlikely event that we must cancel the retreat, we will make an effort to reschedule. At that time you will be given the option to apply your payments to the new date. If the new date does not work for you, all payments will be refunded in full.</p>
             <p>Transfers to another participant are not guaranteed but may be considered on a case-by-case basis.</p>
             <p>Review our full Payments &amp; Refund policies <a href="https://drive.google.com/file/d/1pyojRvCqW8N0Yk_1Dx7Xerzh0hEGGcWj/view?usp=drivesdk" target="_blank" rel="noopener">HERE</a>.</p>
@@ -2440,7 +2448,7 @@
             <p>Yes, and we encourage it! Sites like <a href="https://www.squaremouth.com" target="_blank" rel="noopener">Squaremouth</a> let you compare quotes from many providers; costs typically run about $20–100.</p>
             <p>A few tips:</p>
             <ul>
-              <li>Buy soon after your first payment. "Cancel For Any Reason" and pre-existing condition coverage are usually only available within 14–21 days of your first payment.</li>
+              <li>Buy soon after you register. "Cancel For Any Reason" and pre-existing condition coverage are usually only available within 14–21 days of your first payment.</li>
               <li>Many plans require you to travel 50–100+ miles from home, so check the details.</li>
             </ul>
             <p>We're not affiliated with Squaremouth or any insurer.</p>

@@ -366,6 +366,8 @@
     .price-name { font-size: 1.05rem; line-height: 1.35; }
     .price-name em { display: block; font-size: 0.85rem; color: rgba(240,232,216,0.5); }
     .price-amt { font-family: 'Cinzel', serif; font-size: 1.15rem; color: var(--gold); white-space: nowrap; }
+    .price-list li.booked .price-name { color: rgba(240,232,216,0.35); }
+    .price-amt.booked-tag { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(201,168,76,0.6); }
     .price-amt em { display: block; font-family: 'EB Garamond', serif; font-size: 0.8rem; color: rgba(240,232,216,0.5); text-align: right; }
 
     .price-includes {
@@ -481,7 +483,7 @@
       <h1 class="title"><span>Practical</span>Magic</h1>
       <p class="hook">Who doesn't want life to feel a little more enchanted?</p>
       <p class="sub">A weekend retreat for women<br/>Equal parts restorative retreat &amp; girl's trip</p>
-      <p class="spots">✦ Only 5 spots remain ✦</p>
+      <p class="spots">✦ Only 4 spots remain ✦</p>
       <div class="hero-cta">
         <a href="#reserve" class="btn">Save My Spot</a>
         <p class="call-link">Have questions first? <a href="https://calendar.app.google/bYnRAG7tAuKbhADXA" target="_blank" rel="noopener" data-track="call">Book a free call</a></p>
@@ -585,24 +587,24 @@
 
       <ul class="price-list">
         <li>
-          <span class="price-name">Bunk room, shared<em>Hosts assign rooms</em></span>
+          <span class="price-name">Bunk room, shared<em>Hosts assign beds</em></span>
           <span class="price-amt">$847</span>
         </li>
-        <li>
-          <span class="price-name">Private room, shared with a friend<em>Both register individually</em></span>
-          <span class="price-amt">$897<em>per person</em></span>
+        <li class="booked">
+          <span class="price-name">Private room, shared with a friend</span>
+          <span class="price-amt booked-tag">Fully booked</span>
         </li>
-        <li>
+        <li class="booked">
           <span class="price-name">Private room, solo</span>
-          <span class="price-amt">$1,297</span>
+          <span class="price-amt booked-tag">Fully booked</span>
         </li>
       </ul>
-      <p class="price-includes">All-in totals: $497 retreat programming + your lodging choice. Workshops, meals &amp; lodging included.</p>
+      <p class="price-includes">All-in total: $497 retreat programming + $350 bunk lodging. Workshops, meals &amp; lodging included.</p>
 
-      <p class="deposit">$497 to reserve</p>
-      <p class="deposit-note">Your retreat programming fee includes all workshops, facilitated experiences &amp; meals, and holds your spot. Choose your room at checkout. Within 24 hours, we'll email your final invoice for your room, due within 24 hours of receiving it.</p>
+      <p class="deposit">$847, paid in full</p>
+      <p class="deposit-note">Includes all workshops, facilitated experiences, meals &amp; your bed in our shared bunk room. Prefer to split it up? Choose Klarna at checkout to pay over time (subject to approval).</p>
 
-      <a href="https://book.stripe.com/4gMbJ32WM3WpgtH2OVcAo04" class="btn" data-track="reserve">Reserve My Spot<small>Secure checkout through Stripe</small></a>
+      <a href="https://book.stripe.com/aFa7sNdBq3Wp1yNfBHcAo05" class="btn" data-track="reserve">Reserve My Spot<small>Secure checkout through Stripe</small></a>
 
       <p class="fine">All payments are non-refundable.</p>
 
@@ -626,7 +628,7 @@
 
   <!-- STICKY RESERVE BAR (mobile only) -->
   <div class="sticky" aria-hidden="true">
-    <p class="sticky-text"><strong>Nov 13–15 · Dahlonega</strong>$497 holds your spot</p>
+    <p class="sticky-text"><strong>Nov 13–15 · Dahlonega</strong>Only 4 spots remain</p>
     <a href="#reserve" class="btn" tabindex="-1">Save My Spot</a>
   </div>
 
